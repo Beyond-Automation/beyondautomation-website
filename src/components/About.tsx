@@ -1,1 +1,90 @@
-export default function About(){return <section id="about" className="mx-auto max-w-7xl px-6 py-28 lg:px-8"><div className="grid gap-14 lg:grid-cols-[.8fr_1.2fr] lg:items-center"><div className="rounded-3xl border border-white/10 bg-white/[.035] p-8"><div className="grid aspect-square place-items-center rounded-2xl border border-blue-400/20 bg-gradient-to-br from-blue-500/20 to-cyan-400/5"><div className="text-center"><div className="mx-auto grid h-24 w-24 place-items-center rounded-3xl bg-blue-500 text-3xl font-black shadow-[0_20px_60px_rgba(59,130,246,.3)]">RL</div><p className="mt-6 font-bold">Randall Lewis</p><p className="mt-1 text-sm text-slate-400">Infrastructure Engineer · Founder</p></div></div></div><div><p className="font-mono text-sm uppercase tracking-[.25em] text-blue-300">Built by an engineer</p><h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Experience first. Automation second. Better operations always.</h2><p className="mt-6 text-lg leading-8 text-slate-300">Beyond Automation is where infrastructure experience, PowerShell engineering, and practical AI come together to create tools that help IT professionals work smarter.</p><p className="mt-5 text-lg leading-8 text-slate-400">The goal is not automation for its own sake. It is fewer repetitive tasks, clearer operational insight, stronger reliability, and more time for meaningful engineering.</p><div className="mt-9 flex flex-wrap gap-4"><a href="https://github.com/Beyond-Automation" target="_blank" rel="noreferrer" className="rounded-xl bg-white px-5 py-3 font-bold text-slate-950 transition hover:bg-blue-100">Follow the build</a><a href="mailto:hello@beyondautomation.example" className="rounded-xl border border-white/15 px-5 py-3 font-bold transition hover:bg-white/5">Start a conversation</a></div></div></div></section>}
+const pillars = [
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9Z" />
+      </svg>
+    ),
+    title: "Automate Smarter",
+    description: "Practical automation that solves real problems.",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3 5 6v5c0 4.4 2.8 8.5 7 10 4.2-1.5 7-5.6 7-10V6l-7-3Z" />
+        <path d="m9.5 12 1.7 1.7 3.7-4" />
+      </svg>
+    ),
+    title: "Stay in Control",
+    description: "Built with security, transparency, and trust.",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 19V10h4v9H4Zm6 0V5h4v14h-4Zm6 0V2h4v17h-4Z" />
+      </svg>
+    ),
+    title: "Keep Improving",
+    description: "Resources and patterns that help teams grow.",
+  },
+];
+
+export default function About() {
+  return (
+    <section id="about" className="ba-mission-section">
+      <div className="ba-container">
+        <div className="ba-mission-panel">
+          <div className="ba-mission-ambient" aria-hidden="true" />
+
+          <div className="ba-mission-copy">
+            <p className="ba-mission-eyebrow">Our Mission</p>
+            <h2>
+              Help IT teams move
+              <span> beyond </span>
+              repetitive work.
+            </h2>
+
+            <p className="ba-mission-description">
+              Beyond Automation builds practical tools, engineering patterns, and
+              learning resources that help IT professionals modernize operations
+              without losing control of the fundamentals.
+            </p>
+
+            <div className="ba-mission-pillars">
+              {pillars.map((pillar) => (
+                <article key={pillar.title} className="ba-mission-pillar">
+                  <div className="ba-mission-pillar-icon">{pillar.icon}</div>
+                  <div>
+                    <h3>{pillar.title}</h3>
+                    <p>{pillar.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <aside className="ba-founder-card">
+            <div className="ba-founder-shine" aria-hidden="true" />
+            <div className="ba-quote-mark">“</div>
+
+            <blockquote>
+              AI should strengthen engineering judgment—not replace it.
+            </blockquote>
+
+            <div className="ba-founder-divider" />
+
+            <strong>Randall Lewis</strong>
+            <span>Infrastructure Engineer &amp; Founder</span>
+
+            <div className="ba-founder-wave" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+              <i />
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  );
+}

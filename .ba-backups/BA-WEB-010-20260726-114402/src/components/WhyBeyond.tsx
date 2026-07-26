@@ -26,37 +26,11 @@ const principles = [
 ];
 
 const realities = [
-  {
-    title: "Repetitive health checks",
-    description: "Manual verification across workstations, servers, and sites consumes hours that should be spent engineering improvements.",
-  },
-  {
-    title: "Patch visibility delays",
-    description: "Missing updates and failed deployments are often discovered only after risk or user impact has already increased.",
-  },
-  {
-    title: "Documentation drift",
-    description: "Production environments change faster than documentation, leaving teams dependent on tribal knowledge.",
-  },
-  {
-    title: "Tool sprawl without clarity",
-    description: "More dashboards can create more noise when teams still lack a clear, trusted view of operational health.",
-  },
+  "Too many repetitive checks",
+  "Patch visibility that arrives too late",
+  "Documentation that falls behind",
+  "Tools that create more dashboards instead of fewer problems",
 ];
-
-function OperationsIcon() {
-  return (
-    <svg viewBox="0 0 48 48" aria-hidden="true">
-      <rect x="5" y="7" width="14" height="10" rx="2" />
-      <rect x="29" y="7" width="14" height="10" rx="2" />
-      <rect x="17" y="31" width="14" height="10" rx="2" />
-      <path d="M12 17v7h24v-7M24 24v7" />
-      <circle cx="12" cy="12" r="1.3" />
-      <circle cx="36" cy="12" r="1.3" />
-      <circle cx="24" cy="36" r="1.3" />
-    </svg>
-  );
-}
 
 export default function WhyBeyond() {
   return (
@@ -101,29 +75,26 @@ export default function WhyBeyond() {
             </p>
           </div>
 
-          <div className="why-reality-panel why-reality-panel-premium">
-            <div className="reality-header reality-header-premium">
-              <span className="reality-icon reality-operations-icon">
-                <OperationsIcon />
+          <div className="why-reality-panel">
+            <div className="reality-header">
+              <span className="reality-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3 2.8 20h18.4L12 3Z" />
+                  <path d="M12 9v5M12 17h.01" />
+                </svg>
               </span>
               <div>
-                <p>The reality of modern IT operations</p>
-                <span>
-                  Manual work, delayed visibility, and operational drag quietly consume engineering time.
-                </span>
+                <p>What IT teams are dealing with</p>
+                <span>Operational friction compounds quickly.</span>
               </div>
             </div>
 
-            <div className="reality-list reality-list-premium">
+            <div className="reality-list">
               {realities.map((item, index) => (
-                <article key={item.title} className="reality-item reality-item-premium">
-                  <span className="reality-number">{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                  <span className="reality-arrow" aria-hidden="true">→</span>
-                </article>
+                <div key={item} className="reality-item">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <p>{item}</p>
+                </div>
               ))}
             </div>
           </div>

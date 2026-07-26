@@ -1,0 +1,2 @@
+const items = ["Platform v1.0.0", "PowerShell 7", "Next.js", "TypeScript", "GitHub", "Open Source"];
+export default function TrustBar(){return <section className="border-y border-white/10 bg-white/[.025]"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-10 gap-y-4 px-6 py-6 text-sm font-semibold text-slate-400">{items.map((item)=><span key={item}>{item}</span>)}</div></section>}

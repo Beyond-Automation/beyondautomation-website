@@ -19,10 +19,6 @@ export default function Hero() {
     <section id="top" className="hero-section">
       <div className="hero-grid" />
       <div className="hero-space" />
-      <div className="hero-galaxy hero-galaxy-primary" />
-      <div className="hero-galaxy hero-galaxy-secondary" />
-      <div className="hero-galaxy-horizon" />
-      <div className="hero-nebula" />
       <div className="hero-orb hero-orb-left" />
       <div className="hero-orb hero-orb-right" />
       <div className="hero-beam hero-beam-one" />

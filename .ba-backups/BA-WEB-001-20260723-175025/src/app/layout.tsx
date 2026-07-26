@@ -7,7 +7,8 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   title: "Beyond Automation | Engineering Smarter IT Operations",
-  description: "Practical AI-powered automation tools for IT professionals, built from real infrastructure engineering experience.",
+  description:
+    "Practical AI-powered automation tools for IT professionals, built from real infrastructure engineering experience.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
