@@ -12,67 +12,95 @@ export default function OpenGraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          position: "relative",
-          overflow: "hidden",
+          flexDirection: "column",
+          justifyContent: "space-between",
           background: "#020611",
-          color: "white",
+          color: "#ffffff",
           fontFamily: "Arial, sans-serif",
-          padding: "74px",
+          padding: "72px",
         }}
       >
         <div
           style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "radial-gradient(circle at 18% 30%, rgba(37,99,235,.42), transparent 34%), radial-gradient(circle at 82% 72%, rgba(34,211,238,.25), transparent 30%)",
+            display: "flex",
+            alignItems: "center",
+            gap: "24px",
           }}
-        />
-        <div style={{ display: "flex", flexDirection: "column", zIndex: 1 }}>
+        >
+          <div
+            style={{
+              width: "84px",
+              height: "84px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              border: "3px solid #22d3ee",
+              borderRadius: "22px",
+              color: "#67e8f9",
+              fontSize: "28px",
+              fontWeight: 900,
+            }}
+          >
+            BA
+          </div>
+
           <div
             style={{
               display: "flex",
-              alignItems: "center",
-              gap: "24px",
-              fontSize: "28px",
-              fontWeight: 900,
-              letterSpacing: "5px",
+              flexDirection: "column",
             }}
           >
             <div
               style={{
-                width: "82px",
-                height: "82px",
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                border: "3px solid #22d3ee",
-                borderRadius: "22px",
-                color: "#67e8f9",
+                fontSize: "28px",
+                fontWeight: 900,
+                letterSpacing: "5px",
               }}
             >
-              BA
+              BEYOND
             </div>
-            BEYOND AUTOMATION
-          </div>
 
+            <div
+              style={{
+                display: "flex",
+                marginTop: "6px",
+                fontSize: "18px",
+                fontWeight: 800,
+                letterSpacing: "7px",
+                color: "#22d3ee",
+              }}
+            >
+              AUTOMATION
+            </div>
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            maxWidth: "1000px",
+          }}
+        >
           <div
             style={{
-              maxWidth: "940px",
-              marginTop: "72px",
+              display: "flex",
+              flexWrap: "wrap",
               fontSize: "82px",
               lineHeight: 1,
               letterSpacing: "-4px",
-              fontWeight: 950,
+              fontWeight: 900,
             }}
           >
-            Engineering smarter
-            <span style={{ color: "#22d3ee" }}> IT operations.</span>
+            Engineering smarter&nbsp;
+            <span style={{ color: "#22d3ee" }}>IT operations.</span>
           </div>
 
           <div
             style={{
-              marginTop: "42px",
+              display: "flex",
+              marginTop: "38px",
               fontSize: "28px",
               color: "#cbd5e1",
             }}
