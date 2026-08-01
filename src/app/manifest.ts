@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Beyond Automation",
     short_name: "Beyond Automation",
     description:
-      "Practical AI-assisted automation tools for modern IT operations.",
+      "Engineering software for modern IT operations.",
     start_url: "/",
     display: "standalone",
     background_color: "#02050d",
@@ -19,3 +19,4 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
   };
 }
+

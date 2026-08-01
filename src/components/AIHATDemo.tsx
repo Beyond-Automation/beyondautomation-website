@@ -105,7 +105,7 @@ export default function AIHATDemo() {
       setLogs((current) => [
         ...current,
         "[SUCCESS] Audit modules completed.",
-        "[INFO] Generating AI-assisted summary...",
+        "[INFO] Generating operational summary...",
         "[SUCCESS] AIHAT demonstration completed in 42 seconds.",
       ]);
       timerRef.current = setTimeout(() => setState("complete"), 650);
@@ -162,7 +162,7 @@ export default function AIHATDemo() {
               <span /><span /><span />
             </div>
             <div className="aihat-demo-title">
-              <span className="aihat-demo-logo">AI</span>
+              <span className="aihat-demo-logo">BA</span>
               <div>
                 <b>AIHAT Audit Console</b>
                 <small>DEMO-WORKSTATION-01</small>
@@ -222,10 +222,10 @@ export default function AIHATDemo() {
             <div className="aihat-demo-insights">
               <div className="aihat-demo-panel-heading">
                 <div>
-                  <span>AI-assisted findings</span>
+                  <span>Actionable findings</span>
                   <small>Human review remains in control</small>
                 </div>
-                <span className="aihat-ai-badge">AI</span>
+                <span className="aihat-ai-badge">BA</span>
               </div>
 
               {findings.length === 0 ? (
@@ -306,3 +306,6 @@ export default function AIHATDemo() {
     </section>
   );
 }
+
+
+
