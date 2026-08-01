@@ -68,7 +68,7 @@ export default function About() {
             <div className="ba-quote-mark">“</div>
 
             <blockquote>
-              AI should strengthen engineering judgment—not replace it.
+              Technology should remove obstacles—not create them.
             </blockquote>
 
             <div className="ba-founder-divider" />
@@ -88,3 +88,4 @@ export default function About() {
     </section>
   );
 }
+

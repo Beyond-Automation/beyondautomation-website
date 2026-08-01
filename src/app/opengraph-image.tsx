@@ -105,7 +105,7 @@ export default function OpenGraphImage() {
               color: "#cbd5e1",
             }}
           >
-            Practical automation. Human-guided AI. PowerShell-first engineering.
+            Engineering Software. Practical Automation. Infrastructure Excellence.
           </div>
         </div>
       </div>
@@ -113,3 +113,4 @@ export default function OpenGraphImage() {
     size
   );
 }
+

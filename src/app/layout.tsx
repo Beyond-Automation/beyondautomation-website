@@ -10,12 +10,12 @@ export const metadata: Metadata = {
     template: "%s | Beyond Automation",
   },
   description:
-    "Practical AI-assisted automation tools for IT professionals, built from real infrastructure engineering experience.",
+    "Engineering software that modernizes IT operations through practical automation, infrastructure expertise, and security-first design.",
   keywords: [
     "IT automation",
     "PowerShell automation",
     "infrastructure engineering",
-    "AI for IT operations",
+    "IT operations automation",
     "AIHAT",
     "Windows health audit",
   ],
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     siteName: "Beyond Automation",
     title: "Beyond Automation | Engineering Smarter IT Operations",
     description:
-      "Practical AI-assisted tools built for modern infrastructure teams.",
+      "Engineering software built for modern infrastructure teams.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Beyond Automation | Engineering Smarter IT Operations",
     description:
-      "Practical AI-assisted tools built for modern infrastructure teams.",
+      "Engineering software built for modern infrastructure teams.",
   },
   robots: { index: true, follow: true },
   manifest: "/manifest.webmanifest",
@@ -53,7 +53,7 @@ const organizationSchema = {
   url: siteUrl,
   logo: `${siteUrl}/icon.svg`,
   description:
-    "Practical AI-assisted automation tools for modern IT operations.",
+    "Engineering software for modern IT operations.",
   sameAs: ["https://github.com/Beyond-Automation"],
 };
 
@@ -77,3 +77,7 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+
+

@@ -13,9 +13,9 @@ const principles = [
   },
   {
     icon: "⌁",
-    title: "AI with a human in control",
+    title: "Automation you control",
     description:
-      "AI assists with analysis, documentation, and engineering speed. Final decisions stay grounded in human review, operational context, and responsible judgment.",
+      "Every workflow is transparent, auditable, and designed to support sound engineering decisions in real operational environments.",
   },
   {
     icon: "◇",
@@ -183,7 +183,7 @@ export default function WhyBeyond() {
               {[
                 "Infrastructure Engineering",
                 "PowerShell Automation",
-                "AI-Assisted Development",
+                "Engineering-Driven Development",
                 "Security-Minded Design",
                 "Open Source First",
               ].map((tag) => (
@@ -196,3 +196,5 @@ export default function WhyBeyond() {
     </section>
   );
 }
+
+

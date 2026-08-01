@@ -11,7 +11,7 @@ const activity = [
   ["10:41:14", "Verifying Windows Update health"],
   ["10:41:21", "Checking reboot indicators"],
   ["10:41:29", "Evaluating security posture"],
-  ["10:41:37", "Generating AI-assisted findings"],
+  ["10:41:37", "Generating actionable findings"],
 ];
 
 export default function Hero() {
@@ -36,16 +36,9 @@ export default function Hero() {
             Engineering smarter IT operations
           </span>
 
-          <h1 className="hero-title">
-            Practical automation for the work IT teams{" "}
-            <span className="hero-gradient-text">do every day.</span>
-          </h1>
+          <h1 className="hero-title">Engineering Smarter <span className="text-gradient">IT Operations.</span></h1>
 
-          <p className="hero-description">
-            Beyond Automation turns real infrastructure engineering experience into
-            dependable AI-assisted tools that help IT professionals audit faster,
-            reduce repetitive work, and make better operational decisions.
-          </p>
+          <p className="hero-description">Beyond Automation builds engineering software that simplifies IT operations, strengthens infrastructure, and helps technology professionals solve real operational challenges with confidence.</p>
 
           <div className="hero-actions">
             <a href="#products" className="ba-button ba-button-primary">
@@ -62,7 +55,7 @@ export default function Hero() {
           <div className="hero-proof-grid">
             {[
               ["PowerShell-first", "Built for real IT environments", ">_"],
-              ["AI-assisted", "Human-guided engineering", "⌁"],
+              ["Infrastructure Engineering", "PowerShell Automation", "⌁"],
               ["Security-minded", "Safe by design", "◇"],
             ].map(([title, detail, icon]) => (
               <div key={title} className="hero-proof-card">
@@ -84,7 +77,7 @@ export default function Hero() {
             <div className="dashboard-inner">
               <div className="dashboard-header">
                 <div>
-                  <p className="dashboard-kicker">AI Infrastructure Health Audit Toolkit</p>
+                  <p className="dashboard-kicker">Infrastructure Health Audit Toolkit</p>
                   <div className="dashboard-title-row">
                     <h2>AIHAT v0.2.0</h2>
                     <span className="ba-badge ba-badge-green">
@@ -176,7 +169,7 @@ export default function Hero() {
 
                   <div className="dashboard-card recommendation-card">
                     <div className="card-heading">
-                      <p>AI Recommendations</p>
+                      <p>Operational Recommendations</p>
                       <span>2 findings</span>
                     </div>
 
@@ -213,3 +206,8 @@ export default function Hero() {
     </section>
   );
 }
+
+
+
+
+

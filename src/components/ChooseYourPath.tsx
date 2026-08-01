@@ -21,7 +21,7 @@ const paths = [
     price: "Coming soon",
     description: "Deeper reporting and scheduled operational visibility for individual engineers and growing IT teams.",
     features: [
-      "AI-assisted audit summaries",
+      "Operational audit summaries",
       "Scheduled health audits",
       "PDF and HTML reporting",
       "Historical trend analysis",
@@ -132,3 +132,4 @@ export default function ChooseYourPath() {
     </section>
   );
 }
+

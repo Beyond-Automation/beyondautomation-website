@@ -25,7 +25,7 @@ type FooterItem = {
 const productLinks: FooterItem[] = [
   {
     title: "AIHAT",
-    detail: "AI Infrastructure Health Audit Toolkit",
+    detail: "Infrastructure Health Audit Toolkit",
     icon: "cube",
     href: "#demo",
   },
@@ -259,7 +259,7 @@ export default function Footer() {
 
             <p>
               Engineering smarter IT operations through automation, PowerShell,
-              AI, and modern infrastructure tooling.
+              security, and modern infrastructure tooling.
             </p>
 
             <div className="ba-footer-socials">
@@ -332,3 +332,4 @@ export default function Footer() {
     </footer>
   );
 }
+

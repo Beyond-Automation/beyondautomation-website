@@ -2,7 +2,7 @@ const products = [
   {
     badge: "FLAGSHIP PRODUCT",
     name: "AIHAT",
-    subtitle: "AI Infrastructure Health Audit Toolkit",
+    subtitle: "Infrastructure Health Audit Toolkit",
     text: "A practical PowerShell toolkit that helps IT professionals inspect system health, Windows Update status, and infrastructure readiness with consistent reporting.",
     points: ["System health collection", "Windows Update auditing", "Structured reports", "Extensible modules"],
     status: "In active development",
@@ -62,7 +62,7 @@ export default function AIHAT() {
             <p>
               Beyond Automation was created by Randall Lewis, an Infrastructure
               Engineer focused on PowerShell, Microsoft technologies, modern endpoint
-              operations, and AI-assisted engineering.
+              operations, secure automation, and infrastructure engineering.
             </p>
             <p>
               The mission is simple: build useful tools, share the engineering behind
@@ -89,3 +89,5 @@ export default function AIHAT() {
     </>
   );
 }
+
+

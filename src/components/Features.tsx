@@ -1,8 +1,8 @@
 const features = [
   {
     number: "01",
-    title: "AI with purpose",
-    text: "We apply AI where it accelerates decisions and removes friction—not where it adds complexity.",
+    title: "Engineering with purpose",
+    text: "We build practical solutions that accelerate decisions, remove friction, and reduce operational complexity.",
   },
   {
     number: "02",
@@ -44,3 +44,4 @@ export default function Features() {
     </section>
   );
 }
+

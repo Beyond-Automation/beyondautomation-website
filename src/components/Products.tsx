@@ -35,7 +35,7 @@ const features = [
   "Pending reboot detection",
   "Security posture checks",
   "Structured logging",
-  "AI-assisted findings",
+  "Actionable findings",
 ];
 
 export default function Products() {
@@ -93,7 +93,7 @@ export default function Products() {
               </div>
 
               <p className="mt-7 max-w-2xl text-xl font-bold leading-8 text-slate-100">
-                AI Infrastructure Health Audit Toolkit
+                Infrastructure Health Audit Toolkit
               </p>
               <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400">
                 AIHAT gives infrastructure professionals a repeatable way to collect
@@ -187,7 +187,7 @@ export default function Products() {
                     Engineering principle
                   </p>
                   <p className="mt-2 text-sm leading-6 text-slate-300">
-                    Human-guided AI, transparent PowerShell, and operational results
+                    Transparent PowerShell, engineering expertise, and operational results
                     that infrastructure teams can understand and verify.
                   </p>
                 </div>
@@ -245,3 +245,6 @@ export default function Products() {
     </section>
   );
 }
+
+
+
