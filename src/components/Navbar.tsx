@@ -1,3 +1,4 @@
+import Link from "next/link";
 const navigation = [
   { label: "AIHAT", href: "/aihat" },
   { label: "Products", href: "#products" },
@@ -35,7 +36,7 @@ export default function Navbar() {
     <header className="site-header">
       <div className="ba-container">
         <div className="nav-shell flex h-17 items-center justify-between px-4 sm:px-5">
-          <a href="/" className="group flex items-center gap-3" aria-label="Beyond Automation home">
+          <Link href="/" className="group flex items-center gap-3" aria-label="Beyond Automation home">
             <span className="nav-brand-mark">
               <BrandMark />
             </span>
@@ -43,7 +44,7 @@ export default function Navbar() {
               <span className="block text-sm font-black tracking-[0.18em] text-white">BEYOND</span>
               <span className="block text-[10px] font-bold tracking-[0.34em] text-blue-400">AUTOMATION</span>
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
             {navigation.map((item) => (
@@ -68,3 +69,4 @@ export default function Navbar() {
     </header>
   );
 }
+
