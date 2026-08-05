@@ -1,9 +1,9 @@
 const navigation = [
-  { label: "Why Beyond", href: "#why" },
+  { label: "AIHAT", href: "/aihat" },
   { label: "Products", href: "#products" },
+  { label: "Journal", href: "/journal" },
+  { label: "Resources", href: "/resources" },
   { label: "About", href: "#about" },
-  { label: "Docs", href: "https://github.com/Beyond-Automation/AIHAT" },
-  { label: "Pricing", href: "#pricing" },
 ];
 
 function BrandMark() {
@@ -35,7 +35,7 @@ export default function Navbar() {
     <header className="site-header">
       <div className="ba-container">
         <div className="nav-shell flex h-17 items-center justify-between px-4 sm:px-5">
-          <a href="#top" className="group flex items-center gap-3" aria-label="Beyond Automation home">
+          <a href="/" className="group flex items-center gap-3" aria-label="Beyond Automation home">
             <span className="nav-brand-mark">
               <BrandMark />
             </span>
@@ -47,25 +47,20 @@ export default function Navbar() {
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
             {navigation.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                target={item.href.startsWith("http") ? "_blank" : undefined}
-                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="nav-link"
-              >
+              <a key={item.label} href={item.href} className="nav-link">
                 {item.label}
               </a>
             ))}
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href="#demo" className="nav-demo hidden xl:inline-flex">
-              <span className="play-dot">▶</span>
-              See Live Demo
-            </a>
-            <a href="#products" className="ba-button ba-button-primary hidden sm:inline-flex">
-              Explore AIHAT <span className="ml-2">→</span>
+            <a
+              href="https://github.com/Beyond-Automation/AIHAT/releases/latest"
+              target="_blank"
+              rel="noreferrer"
+              className="ba-button ba-button-primary hidden sm:inline-flex"
+            >
+              Download AIHAT <span className="ml-2">→</span>
             </a>
           </div>
         </div>
