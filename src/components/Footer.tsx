@@ -319,10 +319,10 @@ export default function Footer() {
                 <FooterLink key={item.title} item={item} />
               ))}
             </div>
-            <Link className="ba-footer-column-action" href="/#about">
+            <a className="ba-footer-column-action" href="#about">
               Learn more
               <Icon name="arrow" />
-            </Link>
+            </a>
           </section>
         </div>
 
@@ -333,6 +333,7 @@ export default function Footer() {
     </footer>
   );
 }
+
 
 
 
