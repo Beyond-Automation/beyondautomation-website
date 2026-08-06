@@ -41,14 +41,10 @@ export default function Hero() {
           <p className="hero-description">Beyond Automation builds engineering software that simplifies IT operations, strengthens infrastructure, and helps technology professionals solve real operational challenges with confidence.</p>
 
           <div className="hero-actions">
-            <a href="#products" className="ba-button ba-button-primary">
+            <a href="/aihat" className="ba-button ba-button-primary">
               <span className="mr-2">↗</span>
-              Launch Your First Audit
+              Download AIHAT Free
               <span className="ml-2">→</span>
-            </a>
-            <a href="#demo" className="ba-button ba-button-secondary">
-              <span className="play-icon">▶</span>
-              See Live Demo
             </a>
           </div>
 
@@ -69,7 +65,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div id="demo" className="hero-dashboard-wrap">
+        <div className="hero-dashboard-wrap" aria-label="AIHAT dashboard preview">
           <div className="dashboard-glow" />
           <div className="dashboard-orbit" />
 
@@ -79,7 +75,7 @@ export default function Hero() {
                 <div>
                   <p className="dashboard-kicker">Infrastructure Health Audit Toolkit</p>
                   <div className="dashboard-title-row">
-                    <h2>AIHAT v0.2.0</h2>
+                    <h2>AIHAT v1.0.0</h2>
                     <span className="ba-badge ba-badge-green">
                       <span className="live-dot" />
                       Audit running
@@ -178,7 +174,7 @@ export default function Hero() {
                       <li>Consider enabling Microsoft Defender tamper protection.</li>
                     </ul>
 
-                    <a href="#products">View recommendations →</a>
+                    <a href="/aihat">View recommendations →</a>
                   </div>
                 </div>
               </div>
@@ -206,6 +202,13 @@ export default function Hero() {
     </section>
   );
 }
+
+
+
+
+
+
+
 
 
 

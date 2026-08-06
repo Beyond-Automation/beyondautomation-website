@@ -2984,3 +2984,11 @@ a { text-decoration: none; }
   }
 }
 
+#interactive-demo-console {
+  scroll-margin-top: 7rem;
+}
+
+
+#about {
+  scroll-margin-top: 7rem;
+}

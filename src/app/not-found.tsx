@@ -11,11 +11,12 @@ export default function NotFound() {
           The page may have moved, changed, or never existed. Return to the
           Beyond Automation homepage and continue exploring.
         </p>
-        <a className="ba-button ba-button-primary" href="/">
+        <Link className="ba-button ba-button-primary" href="/">
           Return home <span aria-hidden="true">→</span>
-        </a>
+        </Link>
       </div>
     </main>
   );
 }
+
 

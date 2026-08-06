@@ -1,3 +1,4 @@
+import Link from "next/link";
 type IconName =
   | "cube"
   | "package"
@@ -27,13 +28,13 @@ const productLinks: FooterItem[] = [
     title: "AIHAT",
     detail: "Infrastructure Health Audit Toolkit",
     icon: "cube",
-    href: "#demo",
+    href: "/aihat",
   },
   {
     title: "Future Tools",
     detail: "Coming soon",
     icon: "package",
-    href: "#products",
+    href: "/products",
   },
   {
     title: "Roadmap",
@@ -54,13 +55,13 @@ const resourceLinks: FooterItem[] = [
     title: "Tutorials",
     detail: "Step-by-step walkthroughs",
     icon: "graduation",
-    href: "#",
+    href: "/resources",
   },
   {
     title: "Blog",
     detail: "Insights and engineering notes",
     icon: "document",
-    href: "#",
+    href: "/resources",
   },
   {
     title: "Support",
@@ -75,7 +76,7 @@ const companyLinks: FooterItem[] = [
     title: "About",
     detail: "Our mission and story",
     icon: "info",
-    href: "#about",
+    href: "/#about",
   },
   {
     title: "Community",
@@ -93,7 +94,7 @@ const companyLinks: FooterItem[] = [
     title: "Legal",
     detail: "Privacy Policy • Terms of Use",
     icon: "scale",
-    href: "#",
+    href: "/privacy",
   },
 ];
 
@@ -267,17 +268,17 @@ export default function Footer() {
                 <Icon name="github" />
                 <span>GitHub</span>
               </a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/company/beyond-automation" target="_blank" rel="noreferrer">
                 <Icon name="linkedin" />
                 <span>LinkedIn</span>
               </a>
-              <a href="mailto:contact@beyondautomation.com">
+              <a href="mailto:contact@beyondautomation.io">
                 <Icon name="mail" />
                 <span>Contact</span>
               </a>
             </div>
 
-            <a href="#demo" className="ba-footer-cta">
+            <a href="/aihat" className="ba-footer-cta">
               <span>Explore AIHAT</span>
               <span className="ba-footer-cta-arrow">
                 <Icon name="arrow" />
@@ -292,7 +293,7 @@ export default function Footer() {
                 <FooterLink key={item.title} item={item} />
               ))}
             </div>
-            <a className="ba-footer-column-action" href="#products">
+            <a className="ba-footer-column-action" href="/products">
               View all products
               <Icon name="arrow" />
             </a>
@@ -305,10 +306,10 @@ export default function Footer() {
                 <FooterLink key={item.title} item={item} />
               ))}
             </div>
-            <a className="ba-footer-column-action" href="#">
+            <Link className="ba-footer-column-action" href="/resources">
               View all resources
               <Icon name="arrow" />
-            </a>
+            </Link>
           </section>
 
           <section className="ba-footer-column">
@@ -318,10 +319,10 @@ export default function Footer() {
                 <FooterLink key={item.title} item={item} />
               ))}
             </div>
-            <a className="ba-footer-column-action" href="#about">
+            <Link className="ba-footer-column-action" href="/#about">
               Learn more
               <Icon name="arrow" />
-            </a>
+            </Link>
           </section>
         </div>
 
@@ -332,5 +333,8 @@ export default function Footer() {
     </footer>
   );
 }
+
+
+
 
 

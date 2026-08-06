@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://beyondautomation.com"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://beyondautomation.io"
   ),
   title: {
     default: "Beyond Automation | Engineering Smarter IT Operations",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 };
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://beyondautomation.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://beyondautomation.io";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -77,6 +77,7 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 
 

@@ -136,7 +136,7 @@ export default function AIHATDemo() {
   };
 
   return (
-    <section id="demo" className="aihat-demo-section">
+    <section className="aihat-demo-section">
       <div className="aihat-demo-grid-bg" />
       <div className="aihat-demo-glow aihat-demo-glow-one" />
       <div className="aihat-demo-glow aihat-demo-glow-two" />
@@ -145,18 +145,18 @@ export default function AIHATDemo() {
         <div className="aihat-demo-heading">
           <div>
             <p className="aihat-demo-kicker">Interactive Product Experience</p>
-            <h2>Run an AIHAT audit right in the browser.</h2>
+            <h2>See how an AIHAT audit works.</h2>
           </div>
           <div className="aihat-demo-heading-copy">
             <p>
-              See how AIHAT turns infrastructure checks into clear operational findings.
+              Run a safe browser simulation that demonstrates AIHAT&apos;s audit workflow and reporting.
               This simulated audit uses no backend and touches no device.
             </p>
-            <span>Safe demonstration • No system access • No data collected</span>
+            <span>Safe simulation • No system access • No data collected</span>
           </div>
         </div>
 
-        <div className={`aihat-demo-console ${state === "running" ? "is-running" : ""}`}>
+        <div id="interactive-demo-console" className={`aihat-demo-console ${state === "running" ? "is-running" : ""}`}>
           <div className="aihat-demo-topbar">
             <div className="aihat-demo-window-controls" aria-hidden="true">
               <span /><span /><span />
@@ -191,7 +191,7 @@ export default function AIHATDemo() {
                   <span>Audit modules</span>
                   <small>{completedCount} of {auditModules.length} completed</small>
                 </div>
-                <span className="aihat-demo-runtime">42 sec demo</span>
+                <span className="aihat-demo-runtime">About 8 seconds</span>
               </div>
 
               <div className="aihat-module-list">
@@ -296,7 +296,7 @@ export default function AIHATDemo() {
                 onClick={startAudit}
                 disabled={state === "running"}
               >
-                {state === "idle" ? "Start Audit" : state === "running" ? "Audit Running..." : "Run Again"}
+                {state === "idle" ? "Start Simulated Audit" : state === "running" ? "Simulation Running..." : "Run Again"}
                 <span>{state === "running" ? "•••" : "→"}</span>
               </button>
             </div>
@@ -306,6 +306,11 @@ export default function AIHATDemo() {
     </section>
   );
 }
+
+
+
+
+
 
 
 
