@@ -8,6 +8,7 @@ import ProductRoadmap from "@/components/ProductRoadmap";
 import TrustBar from "@/components/TrustBar";
 import WhyBeyond from "@/components/WhyBeyond";
 import AIHATLaunch from "@/components/AIHATLaunch";
+import AIHATDemo from "@/components/AIHATDemo";
 
 export default function Home() {
   return (
@@ -20,6 +21,14 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <AIHATLaunch />
+
+      <section
+        id="interactive-demo"
+        className="scroll-mt-24"
+        aria-label="AIHAT interactive demo"
+      >
+        <AIHATDemo />
+      </section>
       <WhyBeyond />
       <ProductRoadmap />
       <JournalPreview />
@@ -29,3 +38,4 @@ export default function Home() {
     </main>
   );
 }
+

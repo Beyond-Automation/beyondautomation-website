@@ -9,6 +9,8 @@ const eslintConfig = defineConfig([
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
+      ".ba-backups/**",
+      ".netlify/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
@@ -16,3 +18,5 @@ const eslintConfig = defineConfig([
 ]);
 
 export default eslintConfig;
+
+
