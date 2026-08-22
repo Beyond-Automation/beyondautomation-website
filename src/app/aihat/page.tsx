@@ -5,11 +5,8 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "AIHAT v1.0.0",
   description:
-    "Download AIHAT, the open-source Infrastructure Health Audit Toolkit for Windows operations.",
+    "Explore AIHAT, the Infrastructure Health Audit Toolkit for Windows operations from Beyond Automation.",
 };
-
-const releaseUrl = "https://github.com/Beyond-Automation/AIHAT/releases/latest";
-const repositoryUrl = "https://github.com/Beyond-Automation/AIHAT";
 
 export default function AIHATPage() {
   return (
@@ -27,22 +24,19 @@ export default function AIHATPage() {
           </p>
 
           <div className="ba-launch-actions">
-            <a href={releaseUrl} target="_blank" rel="noreferrer" className="ba-button ba-button-primary">
-              Download latest release →
+            <a href="/products" className="ba-button ba-button-primary">
+              View product availability →
             </a>
-            <a href={`${repositoryUrl}#readme`} target="_blank" rel="noreferrer" className="ba-button ba-button-secondary">
-              Documentation
-            </a>
-            <a href={repositoryUrl} target="_blank" rel="noreferrer" className="ba-text-link">
-              GitHub repository ↗
+            <a href="/resources" className="ba-button ba-button-secondary">
+              Explore resources
             </a>
           </div>
 
           <div className="ba-product-facts">
             <article><strong>4</strong><span>stable health modules</span></article>
-            <article><strong>34</strong><span>automated tests</span></article>
-            <article><strong>1.0.0</strong><span>stable release</span></article>
-            <article><strong>MIT</strong><span>open-source license</span></article>
+            <article><strong>v1.0.0</strong><span>released product</span></article>
+            <article><strong>Windows</strong><span>infrastructure health</span></article>
+            <article><strong>Private</strong><span>proprietary source</span></article>
           </div>
 
           <div className="ba-product-content-grid">
@@ -67,17 +61,17 @@ export default function AIHATPage() {
           </div>
 
           <section className="ba-product-command">
-            <p>Quick start</p>
-            <pre>{`Expand-Archive .\\AIHAT-v1.0.0.zip -DestinationPath C:\\Tools\\AIHAT
-Set-Location C:\\Tools\\AIHAT
-.\\Start-AIHAT.ps1`}</pre>
+            <p>Release experience</p>
+            <pre>{`Launch AIHAT
+Run infrastructure audit
+Review health score and findings
+Export professional report`}</pre>
           </section>
 
           <div className="ba-product-links">
-            <a href={`${repositoryUrl}/blob/main/docs/INSTALLATION.md`} target="_blank" rel="noreferrer">Installation guide →</a>
-            <a href={`${repositoryUrl}/blob/main/docs/USER-GUIDE.md`} target="_blank" rel="noreferrer">User guide →</a>
-            <a href={`${repositoryUrl}/blob/main/docs/RELEASE-NOTES-v1.0.0.md`} target="_blank" rel="noreferrer">Release notes →</a>
-            <a href={`${repositoryUrl}/blob/main/ROADMAP.md`} target="_blank" rel="noreferrer">Roadmap →</a>
+            <a href="/products">Product portfolio →</a>
+            <a href="/resources">Engineering resources →</a>
+            <a href="/journal">Engineering journal →</a>
           </div>
         </div>
       </section>
