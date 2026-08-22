@@ -6,15 +6,15 @@ const products = [
     href: "/aihat",
   },
   {
-    name: "PatchIQ",
-    status: "Research",
-    description: "Patch visibility, prioritization, failure analysis, and maintenance insight.",
+    name: "PatchPilot",
+    status: "Release Candidate",
+    description: "Windows patch-health assessment built for clear evidence, coverage, and remediation decisions.",
     href: "/products",
   },
   {
-    name: "Technical Debt Analyzer",
-    status: "Planned",
-    description: "Translate infrastructure age, risk, and supportability into business evidence.",
+    name: "NetFixLab",
+    status: "Launching",
+    description: "Practical network troubleshooting tools, diagnostic guides, and equipment guidance built around diagnosis first.",
     href: "/products",
   },
   {
@@ -31,8 +31,8 @@ export default function ProductRoadmap() {
       <div className="ba-container">
         <div className="ba-growth-header">
           <div>
-            <p>Product roadmap</p>
-            <h2>AIHAT is the beginning, not the finish line.</h2>
+            <p>Product portfolio</p>
+            <h2>Engineering practical tools for real IT operations.</h2>
           </div>
           <p>
             Every product starts with a real operational problem and ships only when it
@@ -43,7 +43,7 @@ export default function ProductRoadmap() {
         <div className="ba-roadmap-grid">
           {products.map((product) => (
             <a key={product.name} href={product.href} className="ba-roadmap-card">
-              <span className={`ba-roadmap-status status-${product.status.toLowerCase()}`}>
+              <span className={`ba-roadmap-status status-${product.status.toLowerCase().replaceAll(" ", "-")}`}>
                 {product.status}
               </span>
               <h3>{product.name}</h3>
