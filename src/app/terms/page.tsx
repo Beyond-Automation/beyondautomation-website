@@ -9,10 +9,11 @@ export default function TermsPage() {
         <div className="ba-container">
           <h1>Terms of Use</h1>
           <div className="ba-article-body">
-            <p>Website content and open-source software are provided for informational and operational use under their stated licenses.</p>
+            <p>Beyond Automation website content and products are provided subject to the terms, licenses, and notices that apply to each offering.</p>
+            <p>Unless a specific notice states otherwise, Beyond Automation source code, product architecture, internal tooling, documentation, branding, and related intellectual property are proprietary.</p>
             <p>Users are responsible for reviewing, testing, and approving tools before using them in production environments.</p>
-            <p>Beyond Automation does not guarantee that every tool or article is suitable for every organization, device, policy, or regulatory requirement.</p>
-            <p>Third-party links are provided for convenience and remain subject to the third party&apos;s terms.</p>
+            <p>Beyond Automation does not guarantee that every product, tool, or article is suitable for every organization, device, policy, or regulatory requirement.</p>
+            <p>Third-party software, services, and links remain subject to their own licenses, terms, and policies.</p>
           </div>
         </div>
       </article>
