@@ -21,16 +21,8 @@ function BrandMark() {
           <stop offset="100%" stopColor="#4f46e5" />
         </linearGradient>
       </defs>
-      <path
-        d="M32 4 55 17v30L32 60 9 47V17L32 4Z"
-        fill="none"
-        stroke="url(#baNavLogoGradient)"
-        strokeWidth="6"
-      />
-      <path
-        d="M19 24 32 16l13 8-13 8-9-5v10l9 5 13-8v12L32 54 19 46V24Z"
-        fill="url(#baNavLogoGradient)"
-      />
+      <path d="M32 4 55 17v30L32 60 9 47V17L32 4Z" fill="none" stroke="url(#baNavLogoGradient)" strokeWidth="6" />
+      <path d="M19 24 32 16l13 8-13 8-9-5v10l9 5 13-8v12L32 54 19 46V24Z" fill="url(#baNavLogoGradient)" />
     </svg>
   );
 }
@@ -42,45 +34,24 @@ export default function Navbar() {
     <header className="site-header">
       <div className="ba-container">
         <div className="nav-shell flex h-17 items-center justify-between px-4 sm:px-5">
-          <Link
-            href="/"
-            className="group flex items-center gap-3"
-            aria-label="Beyond Automation home"
-          >
-            <span className="nav-brand-mark">
-              <BrandMark />
-            </span>
-
+          <Link href="/" className="group flex items-center gap-3" aria-label="Beyond Automation home">
+            <span className="nav-brand-mark"><BrandMark /></span>
             <span>
-              <span className="block text-sm font-black tracking-[0.18em] text-white">
-                BEYOND
-              </span>
-              <span className="block text-[10px] font-bold tracking-[0.34em] text-blue-400">
-                AUTOMATION
-              </span>
+              <span className="block text-sm font-black tracking-[0.18em] text-white">BEYOND</span>
+              <span className="block text-[10px] font-bold tracking-[0.34em] text-blue-400">AUTOMATION</span>
             </span>
           </Link>
 
-          <nav
-            className="hidden items-center gap-7 lg:flex"
-            aria-label="Primary navigation"
-          >
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
             {navigation.map((item) => (
-              <Link key={item.label} href={item.href} className="nav-link">
-                {item.label}
-              </Link>
+              <Link key={item.label} href={item.href} className="nav-link">{item.label}</Link>
             ))}
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href="https://github.com/Beyond-Automation/AIHAT/releases/latest"
-              target="_blank"
-              rel="noreferrer"
-              className="ba-button ba-button-primary hidden sm:inline-flex"
-            >
-              Download AIHAT <span className="ml-2">→</span>
-            </a>
+            <Link href="/products" className="ba-button ba-button-primary hidden sm:inline-flex">
+              Explore Products <span className="ml-2">→</span>
+            </Link>
 
             <button
               type="button"
@@ -96,28 +67,11 @@ export default function Navbar() {
         </div>
 
         {open && (
-          <nav
-            id="mobile-navigation"
-            className="ba-mobile-navigation lg:hidden"
-            aria-label="Mobile navigation"
-          >
+          <nav id="mobile-navigation" className="ba-mobile-navigation lg:hidden" aria-label="Mobile navigation">
             {navigation.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
+              <Link key={item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}</Link>
             ))}
-
-            <a
-              href="https://github.com/Beyond-Automation/AIHAT/releases/latest"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Download AIHAT
-            </a>
+            <Link href="/products" onClick={() => setOpen(false)}>Explore Products</Link>
           </nav>
         )}
       </div>
