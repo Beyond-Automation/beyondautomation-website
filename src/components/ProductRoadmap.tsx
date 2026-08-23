@@ -2,26 +2,30 @@ const products = [
   {
     name: "AIHAT",
     status: "Released",
-    description: "Infrastructure Health Audit Toolkit for Windows operations.",
+    description: "Infrastructure Health Audit Toolkit for Windows operations. See the audit workflow, reporting experience, and operational findings in action.",
     href: "/aihat",
+    cta: "Explore AIHAT",
   },
   {
     name: "PatchPilot",
     status: "Release Candidate",
-    description: "Windows patch-health assessment built for clear evidence, coverage, and remediation decisions.",
-    href: "/products",
+    description: "Windows patch-health assessment built to turn patch state into clear evidence, coverage, and remediation decisions.",
+    href: "/journal",
+    cta: "Follow the build",
   },
   {
     name: "NetFixLab",
     status: "Launching",
-    description: "Practical network troubleshooting tools, diagnostic guides, and equipment guidance built around diagnosis first.",
-    href: "/products",
+    description: "Diagnosis-first network troubleshooting guidance designed to help people isolate problems before spending money on the wrong fix.",
+    href: "/journal",
+    cta: "Follow the launch",
   },
   {
-    name: "Automation Library",
-    status: "Planned",
-    description: "Reusable PowerShell tools for practical infrastructure operations.",
+    name: "Engineering Resources",
+    status: "Growing",
+    description: "Practical checklists, demonstrations, and operational resources that show how Beyond Automation approaches real infrastructure work.",
     href: "/resources",
+    cta: "Explore resources",
   },
 ];
 
@@ -32,11 +36,11 @@ export default function ProductRoadmap() {
         <div className="ba-growth-header">
           <div>
             <p>Product portfolio</p>
-            <h2>Engineering practical tools for real IT operations.</h2>
+            <h2>Choose the problem. See the engineering.</h2>
           </div>
           <p>
-            Every product starts with a real operational problem and ships only when it
-            meets the same engineering, security, testing, and documentation standards.
+            Public product experiences demonstrate the value. Proprietary source code,
+            architecture, and internal release tooling stay private.
           </p>
         </div>
 
@@ -48,7 +52,7 @@ export default function ProductRoadmap() {
               </span>
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              <strong>Explore →</strong>
+              <strong>{product.cta} →</strong>
             </a>
           ))}
         </div>
