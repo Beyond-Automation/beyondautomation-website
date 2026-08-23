@@ -1,8 +1,8 @@
 const articles = [
   {
     title: "How AIHAT v1.0 went from PowerShell script to released product",
-    category: "Building in public",
-    description: "The architecture, quality gates, release workflow, and lessons behind the first stable release.",
+    category: "Product Engineering",
+    description: "The quality gates, release workflow, product decisions, and lessons behind the first stable release—without exposing proprietary source.",
     href: "/journal/building-aihat-v1",
   },
   {
@@ -14,7 +14,7 @@ const articles = [
   {
     title: "Build once. Publish everywhere.",
     category: "Beyond Automation",
-    description: "The operating rule that turns every engineering feature into a launch package and lasting content.",
+    description: "The operating rule that turns engineering work into product proof, launch content, and lasting trust without publishing the private implementation.",
     href: "/journal/build-once-publish-everywhere",
   },
 ];
@@ -26,7 +26,7 @@ export default function JournalPreview() {
         <div className="ba-growth-header">
           <div>
             <p>Engineering Journal</p>
-            <h2>Real engineering. Shared openly.</h2>
+            <h2>Real engineering. Useful proof. Private source.</h2>
           </div>
           <a href="/journal" className="ba-text-link">View all articles →</a>
         </div>
