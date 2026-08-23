@@ -1,5 +1,5 @@
 const items = [
-  { title: "Open Source", detail: "Transparent by design", icon: "code" },
+  { title: "Private Core", detail: "Proprietary implementation protected", icon: "code" },
   { title: "Infrastructure Engineering", detail: "Built from operational experience", icon: "spark" },
   { title: "PowerShell First", detail: "Built for real IT work", icon: "terminal" },
   { title: "Security Focused", detail: "Safe operational patterns", icon: "shield" },
@@ -47,4 +47,3 @@ export default function TrustBar() {
     </section>
   );
 }
-
