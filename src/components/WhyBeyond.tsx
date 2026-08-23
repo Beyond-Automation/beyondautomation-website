@@ -9,13 +9,13 @@ const principles = [
     icon: ">_",
     title: "Automation you can understand",
     description:
-      "Transparent PowerShell, clear logic, useful logs, and outputs that infrastructure professionals can verify instead of treating automation like a black box.",
+      "Clear logic, useful logs, and outputs that infrastructure professionals can verify instead of treating automation like a black box.",
   },
   {
     icon: "⌁",
     title: "Automation you control",
     description:
-      "Every workflow is transparent, auditable, and designed to support sound engineering decisions in real operational environments.",
+      "Every workflow is auditable and designed to support sound engineering decisions in real operational environments.",
   },
   {
     icon: "◇",
@@ -96,8 +96,8 @@ export default function WhyBeyond() {
             </blockquote>
             <p>
               Every Beyond Automation product is designed to be useful in the real
-              world: readable, explainable, secure, and grounded in infrastructure
-              engineering experience.
+              world: explainable, secure, and grounded in infrastructure engineering
+              experience.
             </p>
           </div>
 
@@ -169,14 +169,13 @@ export default function WhyBeyond() {
             <p className="why-eyebrow">Engineer-led, not hype-led</p>
             <h3>Created from infrastructure experience.</h3>
             <p>
-              Beyond Automation is being built by an Infrastructure Engineer who works
-              with Windows environments, PowerShell, patching, endpoint management,
-              security tooling, and the daily reality of supporting distributed IT
-              operations.
+              Beyond Automation is being built from hands-on work with Windows environments,
+              PowerShell, patching, endpoint management, security tooling, and the daily reality
+              of supporting distributed IT operations.
             </p>
             <p>
-              That experience shapes the products: practical first, transparent by
-              design, and focused on outcomes that matter to working IT teams.
+              That experience shapes the products: practical first, secure by design, and focused
+              on outcomes that matter to working IT teams.
             </p>
 
             <div className="story-tags">
@@ -185,7 +184,7 @@ export default function WhyBeyond() {
                 "PowerShell Automation",
                 "Engineering-Driven Development",
                 "Security-Minded Design",
-                "Open Source First",
+                "Private Core / Public Proof",
               ].map((tag) => (
                 <span key={tag}>{tag}</span>
               ))}
@@ -196,5 +195,3 @@ export default function WhyBeyond() {
     </section>
   );
 }
-
-
