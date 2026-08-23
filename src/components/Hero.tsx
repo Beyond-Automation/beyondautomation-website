@@ -41,9 +41,9 @@ export default function Hero() {
           <p className="hero-description">Beyond Automation builds engineering software that simplifies IT operations, strengthens infrastructure, and helps technology professionals solve real operational challenges with confidence.</p>
 
           <div className="hero-actions">
-            <a href="/aihat" className="ba-button ba-button-primary">
+            <a href="/products" className="ba-button ba-button-primary">
               <span className="mr-2">↗</span>
-              Download AIHAT Free
+              Explore Products
               <span className="ml-2">→</span>
             </a>
           </div>
@@ -102,40 +102,19 @@ export default function Hero() {
               <div className="dashboard-main">
                 <div className="health-column">
                   {healthRows.map((row, index) => (
-                    <div
-                      key={row.label}
-                      className="health-row"
-                      style={{ animationDelay: `${index * 0.12}s` }}
-                    >
+                    <div key={row.label} className="health-row" style={{ animationDelay: `${index * 0.12}s` }}>
                       <span className="metric-icon">
                         {row.label === "CPU" ? "▦" : row.label === "Memory" ? "▤" : row.label === "Disk" ? "▣" : row.label === "Updates" ? "⟳" : "◇"}
                       </span>
-
                       <div className="health-content">
                         <div className="health-topline">
-                          <div>
-                            <p>{row.label}</p>
-                            <span>{row.detail}</span>
-                          </div>
-
+                          <div><p>{row.label}</p><span>{row.detail}</span></div>
                           <div className="health-value-area">
-                            {row.spark && (
-                              <svg viewBox="0 0 96 24" className="sparkline" aria-hidden="true">
-                                <polyline
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                  points={row.spark}
-                                />
-                              </svg>
-                            )}
+                            {row.spark && <svg viewBox="0 0 96 24" className="sparkline" aria-hidden="true"><polyline fill="none" stroke="currentColor" strokeWidth="1.5" points={row.spark} /></svg>}
                             <strong className={row.tone}>{row.value}</strong>
                           </div>
                         </div>
-
-                        <div className="health-track">
-                          <div className="health-bar" style={{ width: row.width }} />
-                        </div>
+                        <div className="health-track"><div className="health-bar" style={{ width: row.width }} /></div>
                       </div>
                     </div>
                   ))}
@@ -143,37 +122,22 @@ export default function Hero() {
 
                 <div className="dashboard-side">
                   <div className="dashboard-card">
-                    <div className="card-heading">
-                      <p>Audit activity</p>
-                      <span>05 / 05</span>
-                    </div>
-
+                    <div className="card-heading"><p>Audit activity</p><span>05 / 05</span></div>
                     <div className="activity-list">
                       {activity.map(([time, item], index) => (
-                        <div
-                          key={item}
-                          className="activity-line"
-                          style={{ animationDelay: `${index * 0.42}s` }}
-                        >
-                          <span className="activity-check">✓</span>
-                          <span className="activity-copy">{item}</span>
-                          <span className="activity-time">{time}</span>
+                        <div key={item} className="activity-line" style={{ animationDelay: `${index * 0.42}s` }}>
+                          <span className="activity-check">✓</span><span className="activity-copy">{item}</span><span className="activity-time">{time}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   <div className="dashboard-card recommendation-card">
-                    <div className="card-heading">
-                      <p>Operational Recommendations</p>
-                      <span>2 findings</span>
-                    </div>
-
+                    <div className="card-heading"><p>Operational Recommendations</p><span>2 findings</span></div>
                     <ul>
                       <li>Review two missing Windows updates before the next maintenance window.</li>
                       <li>Consider enabling Microsoft Defender tamper protection.</li>
                     </ul>
-
                     <a href="/aihat">View recommendations →</a>
                   </div>
                 </div>
@@ -181,15 +145,11 @@ export default function Hero() {
 
               <div className="dashboard-footer">
                 <div className="audit-log">
-                  <div className="log-heading">
-                    <span>&gt;_ Audit Log</span>
-                    <span className="live-label">Live <i className="live-dot" /></span>
-                  </div>
+                  <div className="log-heading"><span>&gt;_ Audit Log</span><span className="live-label">Live <i className="live-dot" /></span></div>
                   <div className="log-line"><span>10:41:02</span><b>[INFO]</b><em>Starting infrastructure audit...</em></div>
                   <div className="log-line"><span>10:41:08</span><b>[INFO]</b><em>Analyzing configuration...</em></div>
                   <div className="log-line"><span>10:41:37</span><b className="success">[SUCCESS]</b><em>Audit complete</em></div>
                 </div>
-
                 <div className="report-status">
                   <div><span>Generating report...</span><strong>100%</strong></div>
                   <div className="report-track"><div className="report-progress" /></div>
@@ -202,16 +162,3 @@ export default function Hero() {
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
