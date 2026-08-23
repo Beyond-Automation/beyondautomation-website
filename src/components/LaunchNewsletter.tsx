@@ -5,8 +5,7 @@ import { FormEvent, useState } from "react";
 type SubmissionState = "idle" | "submitting" | "success" | "error";
 
 export default function LaunchNewsletter() {
-  const [submissionState, setSubmissionState] =
-    useState<SubmissionState>("idle");
+  const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -46,10 +45,10 @@ export default function LaunchNewsletter() {
         <div className="ba-newsletter-card">
           <div>
             <p>Beyond Automation Dispatch</p>
-            <h2>Practical engineering delivered without the hype.</h2>
+            <h2>Follow the products while we build them.</h2>
             <span>
-              Product releases, PowerShell lessons, infrastructure guidance,
-              and the real story behind what we build.
+              Get practical engineering notes, product launch updates, PowerShell lessons,
+              and infrastructure guidance from the work behind AIHAT, PatchPilot, and NetFixLab.
             </span>
           </div>
 
@@ -59,13 +58,10 @@ export default function LaunchNewsletter() {
             className="ba-newsletter-form"
             onSubmit={handleSubmit}
           >
-            <input
-              type="hidden"
-              name="form-name"
-              value="newsletter"
-            />
+            <input type="hidden" name="form-name" value="newsletter" />
+            <input type="hidden" name="source" value="website-dispatch" />
 
-            <label htmlFor="newsletter-email">Work email</label>
+            <label htmlFor="newsletter-email">Email address</label>
 
             <div>
               <input
@@ -78,19 +74,14 @@ export default function LaunchNewsletter() {
                 disabled={submissionState === "submitting"}
               />
 
-              <button
-                type="submit"
-                disabled={submissionState === "submitting"}
-              >
-                {submissionState === "submitting"
-                  ? "Joining..."
-                  : "Join the list"}
+              <button type="submit" disabled={submissionState === "submitting"}>
+                {submissionState === "submitting" ? "Joining..." : "Follow the build"}
               </button>
             </div>
 
             {submissionState === "success" && (
               <small role="status">
-                You are on the list. Welcome to Beyond Automation.
+                You are on the list. We will send product and engineering updates as they ship.
               </small>
             )}
 
@@ -101,7 +92,9 @@ export default function LaunchNewsletter() {
             )}
 
             {submissionState === "idle" && (
-              <small>No spam. Unsubscribe anytime.</small>
+              <small>
+                No spam. Unsubscribe anytime. See our <a href="/privacy">privacy policy</a>.
+              </small>
             )}
           </form>
         </div>
