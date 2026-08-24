@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Beyond Automation Website
 
-## Getting Started
+The public website for Beyond Automation — a product and engineering brand focused on practical IT operations, PowerShell automation, infrastructure health, patch readiness, and network troubleshooting.
 
-First, run the development server:
+## Product portfolio
 
-```bash
+- **AIHAT** — released Windows infrastructure health audit product
+- **PatchPilot** — release-candidate patch-health assessment product
+- **NetFixLab** — launching diagnosis-first network troubleshooting product
+- **Engineering Resources** — practical operational guidance and demonstrations
+
+The website follows a **public proof / private engineering core** model. Product value, demonstrations, release status, and selected engineering lessons are public while proprietary source code, architecture, and internal release tooling remain private.
+
+## Technology
+
+- Next.js
+- TypeScript
+- React
+- Tailwind CSS
+- Netlify deployment and form handling
+- GitHub Actions CI and security analysis
+
+## Local development
+
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Before merging website changes, run the same core checks used by CI:
 
-## Learn More
+```powershell
+npm run lint
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Repository automation also validates the site through GitHub Actions and security analysis on pull requests.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Engineering standard
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Changes should be intentional, validated, and aligned with the current Beyond Automation product strategy. Public-facing messaging must not expose private repository destinations, proprietary implementation details, or obsolete open-source positioning.
 
-## Deploy on Vercel
+## Repository status
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This repository contains the Beyond Automation website implementation and is maintained as private source.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copyright © 2026 Beyond Automation. All rights reserved.
