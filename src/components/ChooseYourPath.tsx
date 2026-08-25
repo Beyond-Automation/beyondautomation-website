@@ -2,7 +2,7 @@ const paths = [
   {
     label: "Released",
     name: "AIHAT",
-    price: "Product",
+    price: "Available now",
     description: "Explore practical Windows infrastructure auditing built for working IT professionals.",
     features: [
       "Windows infrastructure health auditing",
@@ -18,7 +18,7 @@ const paths = [
   {
     label: "Release candidate",
     name: "PatchPilot",
-    price: "Coming soon",
+    price: "Approaching launch",
     description: "Windows patch-health assessment built for clear evidence, coverage, and remediation decisions.",
     features: [
       "Patch-health assessment",
@@ -27,14 +27,14 @@ const paths = [
       "Release-gated engineering",
       "Private proprietary source",
     ],
-    cta: "Explore products",
-    href: "/products",
+    cta: "Follow the build",
+    href: "/journal",
     featured: false,
   },
   {
     label: "Launching",
     name: "NetFixLab",
-    price: "Web product",
+    price: "Live web experience",
     description: "Practical network troubleshooting guidance built around diagnosis first.",
     features: [
       "Troubleshooting workflows",
@@ -43,8 +43,8 @@ const paths = [
       "Public customer experience",
       "Private implementation source",
     ],
-    cta: "View portfolio",
-    href: "/products",
+    cta: "Follow the launch",
+    href: "/journal",
     featured: false,
   },
 ];
@@ -59,7 +59,7 @@ function CheckIcon() {
 
 export default function ChooseYourPath() {
   return (
-    <section id="pricing" className="path-section">
+    <section id="portfolio" className="path-section">
       <div className="path-grid-bg" aria-hidden="true" />
       <div className="path-glow path-glow-left" aria-hidden="true" />
       <div className="path-glow path-glow-right" aria-hidden="true" />
@@ -68,11 +68,11 @@ export default function ChooseYourPath() {
         <div className="path-heading">
           <div>
             <p className="path-eyebrow">Product Portfolio</p>
-            <h2>Practical products for real IT operations.</h2>
+            <h2>Choose the problem. Explore the product.</h2>
           </div>
           <p>
-            Beyond Automation showcases what the products do while keeping proprietary
-            source code, architecture, and internal release tooling private.
+            Beyond Automation shows customers what each product solves while keeping
+            proprietary source code, architecture, and internal release tooling private.
           </p>
         </div>
 
