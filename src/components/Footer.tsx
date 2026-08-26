@@ -8,13 +8,13 @@ type FooterItem = {
 
 const productLinks: FooterItem[] = [
   { title: "AIHAT", detail: "Infrastructure Health Audit Toolkit", href: "/aihat" },
-  { title: "PatchPilot", detail: "Windows patch-health assessment", href: "/products" },
-  { title: "NetFixLab", detail: "Network troubleshooting and diagnostics", href: "/products" },
+  { title: "PatchPilot", detail: "Windows patch-health assessment", href: "/journal" },
+  { title: "NetFixLab", detail: "Network troubleshooting and diagnostics", href: "/journal" },
 ];
 
 const resourceLinks: FooterItem[] = [
-  { title: "Resources", detail: "Guides and references", href: "/resources" },
-  { title: "Journal", detail: "Engineering notes and lessons", href: "/journal" },
+  { title: "Resources", detail: "Practical guides and references", href: "/resources" },
+  { title: "Journal", detail: "Product engineering notes and lessons", href: "/journal" },
   { title: "Products", detail: "Current product portfolio", href: "/products" },
 ];
 
