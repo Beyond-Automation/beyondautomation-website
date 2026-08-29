@@ -69,7 +69,7 @@ export default function Footer() {
             </p>
 
             <div className="ba-footer-socials">
-              <a href="https://www.linkedin.com/company/beyond-automation" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/company/beyond-automation-io" target="_blank" rel="noreferrer">
                 <span>LinkedIn</span>
               </a>
               <a href="mailto:contact@beyondautomation.io"><span>Contact</span></a>
