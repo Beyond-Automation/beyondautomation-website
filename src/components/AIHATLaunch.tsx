@@ -13,7 +13,7 @@ export default function AIHATLaunch() {
       <div className="ba-container">
         <div className="ba-launch-heading">
           <p className="ba-launch-eyebrow">Flagship Beyond Automation product</p>
-          <h2>AIHAT v1.0.0 is released.</h2>
+          <h2>AIHAT v1.1.0 is released.</h2>
           <p>
             The Infrastructure Health Audit Toolkit gives IT professionals a repeatable way
             to inspect Windows health, identify operational risk, and create evidence they
@@ -52,7 +52,7 @@ export default function AIHATLaunch() {
               <span />
               <span />
               <span />
-              <strong>AIHAT v1.0.0</strong>
+              <strong>AIHAT v1.1.0</strong>
             </div>
             <pre>{`EXECUTIVE SUMMARY
 --------------------------------
