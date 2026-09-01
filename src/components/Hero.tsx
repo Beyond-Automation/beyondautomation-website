@@ -75,7 +75,7 @@ export default function Hero() {
                 <div>
                   <p className="dashboard-kicker">Infrastructure Health Audit Toolkit</p>
                   <div className="dashboard-title-row">
-                    <h2>AIHAT v1.0.0</h2>
+                    <h2>AIHAT v1.1.0</h2>
                     <span className="ba-badge ba-badge-green">
                       <span className="live-dot" />
                       Audit running

@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://beyondautomation.io"
-  ),
+  metadataBase: new URL("https://beyondautomation.io"),
   title: {
     default: "Beyond Automation | Engineering Smarter IT Operations",
     template: "%s | Beyond Automation",
@@ -47,8 +45,7 @@ export const metadata: Metadata = {
   icons: { icon: "/icon.svg" },
 };
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://beyondautomation.io";
+const siteUrl = "https://beyondautomation.io";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -58,7 +55,7 @@ const organizationSchema = {
   logo: `${siteUrl}/icon.svg`,
   description:
     "Engineering software for modern IT operations.",
-  sameAs: ["https://www.linkedin.com/company/beyond-automation"],
+  sameAs: ["https://www.linkedin.com/company/beyond-automation-io"],
 };
 
 export default function RootLayout({

@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "AIHAT v1.0.0",
+  title: "AIHAT v1.1.0",
   description:
     "Explore AIHAT, the Infrastructure Health Audit Toolkit for Windows operations from Beyond Automation.",
 };
@@ -34,7 +34,7 @@ export default function AIHATPage() {
 
           <div className="ba-product-facts">
             <article><strong>4</strong><span>stable health modules</span></article>
-            <article><strong>v1.0.0</strong><span>released product</span></article>
+            <article><strong>v1.1.0</strong><span>released product</span></article>
             <article><strong>Windows</strong><span>infrastructure health</span></article>
             <article><strong>Private</strong><span>proprietary source</span></article>
           </div>
