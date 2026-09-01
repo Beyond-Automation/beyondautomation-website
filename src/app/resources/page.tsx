@@ -22,7 +22,7 @@ export default function ResourcesPage() {
           <div className="ba-roadmap-grid">
             <a className="ba-roadmap-card" href="/aihat">
               <span className="ba-roadmap-status status-released">Released</span>
-              <h2>AIHAT v1.0.0</h2>
+              <h2>AIHAT v1.1.0</h2>
               <p>Run the safe browser demonstration and see the Windows infrastructure health audit workflow, findings, and reporting experience.</p>
               <strong>Run the AIHAT experience →</strong>
             </a>
