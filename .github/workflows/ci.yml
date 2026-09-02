@@ -23,3 +23,25 @@ jobs:
       - run: npm ci --include=optional
       - run: npm run build
       - run: npm audit --omit=dev --omit=optional --audit-level=high
+
+  deploy:
+    name: Deploy production to Netlify
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    env:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      NEXT_PUBLIC_SITE_URL: https://beyondautomation.io
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --include=optional
+      - name: Deploy validated main to Netlify
+        run: npx --yes netlify-cli@27.4.2 deploy --build --prod --message "GitHub Actions ${{ github.sha }}"
