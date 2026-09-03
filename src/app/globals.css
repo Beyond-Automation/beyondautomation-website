@@ -3016,3 +3016,110 @@ a { text-decoration: none; }
 #about {
   scroll-margin-top: 7rem;
 }
+
+/* AIHAT v1.1.0 release experience */
+.aihat-release-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(5rem, 9vw, 8.5rem) 0 clamp(4rem, 8vw, 7rem);
+  background:
+    radial-gradient(circle at 72% 45%, rgba(37, 99, 235, .22), transparent 32%),
+    radial-gradient(circle at 18% 10%, rgba(6, 182, 212, .12), transparent 28%),
+    linear-gradient(180deg, #050816 0%, #070b1c 100%);
+}
+.aihat-release-grid {
+  position:absolute; inset:0; opacity:.14;
+  background-image:linear-gradient(rgba(96,165,250,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(96,165,250,.16) 1px,transparent 1px);
+  background-size:54px 54px;
+  mask-image:linear-gradient(to bottom,black,transparent 88%);
+}
+.aihat-release-glow {
+  position:absolute; width:40rem; height:40rem; right:-14rem; top:-12rem;
+  border-radius:50%; background:#2563eb; filter:blur(160px); opacity:.13;
+}
+.aihat-release-shell { position:relative; display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(3rem,7vw,7rem); align-items:center; }
+.aihat-release-copy h1 { max-width:48rem; margin:1rem 0 0; font-size:clamp(3.4rem,7vw,6.7rem); line-height:.93; letter-spacing:-.065em; }
+.aihat-release-badges { display:flex; flex-wrap:wrap; gap:.55rem; margin-bottom:2rem; }
+.aihat-release-badges span { display:inline-flex; align-items:center; gap:.5rem; padding:.48rem .75rem; border:1px solid rgba(125,211,252,.18); border-radius:999px; color:#b9d8ff; background:rgba(15,23,42,.66); font-size:.78rem; font-weight:800; }
+.aihat-release-badges i { width:.5rem; height:.5rem; border-radius:50%; background:#34d399; box-shadow:0 0 16px #34d399; }
+.aihat-release-lead { max-width:43rem; margin:1.5rem 0 0; color:#a8b5ca; font-size:1.12rem; line-height:1.8; }
+.aihat-release-actions { display:flex; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:2rem; }
+.aihat-download-button { display:flex; align-items:center; gap:1rem; min-width:min(100%,24rem); padding:1rem 1.15rem; border:1px solid rgba(103,232,249,.45); border-radius:1rem; color:white; background:linear-gradient(135deg,#2563eb,#0891b2); box-shadow:0 18px 55px rgba(37,99,235,.28); transition:transform .2s ease,box-shadow .2s ease; }
+.aihat-download-button:hover { transform:translateY(-3px); box-shadow:0 24px 70px rgba(37,99,235,.38); }
+.aihat-download-button > span:nth-child(2) { display:flex; flex:1; flex-direction:column; }
+.aihat-download-button strong { font-size:1.02rem; }
+.aihat-download-button small { margin-top:.15rem; color:#dbeafe; font-size:.72rem; }
+.aihat-download-button b { font-size:1.35rem; }
+.aihat-download-icon { display:grid; place-items:center; width:2.5rem; height:2.5rem; border-radius:.75rem; background:rgba(255,255,255,.14); font-size:1.35rem; }
+.aihat-release-secondary { color:#bae6fd; font-weight:800; }
+.aihat-release-trust { display:flex; flex-wrap:wrap; gap:.8rem 1.2rem; margin-top:1.35rem; color:#7f91aa; font-size:.76rem; font-weight:700; }
+.aihat-product-stage { position:relative; min-width:0; }
+.aihat-stage-orbit { position:absolute; inset:-2.5rem; border:1px solid rgba(96,165,250,.14); border-radius:50%; transform:rotate(-8deg); }
+.aihat-window { position:relative; overflow:hidden; border:1px solid rgba(125,211,252,.25); border-radius:1.5rem; background:rgba(5,8,22,.88); box-shadow:0 40px 100px rgba(0,0,0,.52),inset 0 1px rgba(255,255,255,.04); backdrop-filter:blur(18px); }
+.aihat-window-bar { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.9rem 1rem; border-bottom:1px solid rgba(148,163,184,.12); color:#7f91aa; font:700 .66rem/1.2 monospace; letter-spacing:.08em; }
+.aihat-window-bar div { display:flex; gap:.35rem; }
+.aihat-window-bar div span { width:.55rem; height:.55rem; border-radius:50%; background:#1e3a5f; }
+.aihat-window-bar em { color:#67e8f9; font-style:normal; }
+.aihat-window-body { display:grid; grid-template-columns:.7fr 1.3fr; gap:1.2rem; padding:clamp(1.25rem,4vw,2.2rem); align-items:center; }
+.aihat-score-ring { display:grid; place-items:center; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,#091126 55%,transparent 56%),conic-gradient(#22d3ee 0 87%,rgba(148,163,184,.12) 87%); box-shadow:0 0 40px rgba(34,211,238,.12); }
+.aihat-score-ring span { align-self:end; color:#64748b; font-size:.58rem; font-weight:900; letter-spacing:.13em; }
+.aihat-score-ring strong { font-size:clamp(2.7rem,6vw,4.4rem); line-height:.85; }
+.aihat-score-ring small { align-self:start; color:#fbbf24; font-weight:800; }
+.aihat-module-list { display:grid; gap:.65rem; }
+.aihat-module-list div { display:flex; justify-content:space-between; gap:1rem; padding:.8rem .9rem; border:1px solid rgba(148,163,184,.1); border-radius:.7rem; background:rgba(255,255,255,.025); color:#a8b5ca; font-size:.76rem; }
+.aihat-module-list strong { font-size:.68rem; }
+.is-healthy { color:#34d399; } .is-warning { color:#fbbf24; }
+.aihat-window-footer { display:flex; justify-content:space-between; gap:1rem; padding:1rem 1.2rem; border-top:1px solid rgba(148,163,184,.12); color:#64748b; font:700 .68rem/1.4 monospace; }
+.aihat-window-footer strong { color:#67e8f9; }
+.aihat-release-strip { border-block:1px solid rgba(148,163,184,.1); background:#050713; }
+.aihat-release-strip .ba-container { display:grid; grid-template-columns:repeat(4,1fr); }
+.aihat-release-strip article { padding:1.5rem; text-align:center; border-right:1px solid rgba(148,163,184,.1); }
+.aihat-release-strip article:last-child { border-right:0; }
+.aihat-release-strip strong,.aihat-release-strip span { display:block; }
+.aihat-release-strip strong { font-size:1.7rem; color:white; }
+.aihat-release-strip span { margin-top:.25rem; color:#64748b; font-size:.72rem; font-weight:700; }
+.aihat-release-content { padding:clamp(5rem,9vw,8rem) 0; background:linear-gradient(180deg,#070b1c,#050816); }
+.aihat-section-heading { max-width:50rem; }
+.aihat-section-heading h2,.aihat-install-panel h2,.aihat-integrity h2 { margin:.8rem 0 0; font-size:clamp(2.4rem,5vw,4.6rem); line-height:1; letter-spacing:-.05em; }
+.aihat-section-heading > p:last-child,.aihat-integrity p { color:#94a3b8; line-height:1.8; }
+.aihat-capability-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:2.5rem; }
+.aihat-capability-grid article { min-height:15rem; padding:1.4rem; border:1px solid rgba(148,163,184,.12); border-radius:1.2rem; background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(37,99,235,.025)); }
+.aihat-capability-grid article > span { color:#22d3ee; font:900 .72rem/1 monospace; letter-spacing:.12em; }
+.aihat-capability-grid h3 { margin:3rem 0 .7rem; font-size:1.2rem; }
+.aihat-capability-grid p { color:#7f91aa; line-height:1.7; font-size:.87rem; }
+.aihat-install-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:clamp(2rem,6vw,6rem); margin-top:clamp(6rem,10vw,10rem); align-items:start; }
+.aihat-install-panel ol { display:grid; gap:1rem; margin:2rem 0 0; padding:0; list-style:none; }
+.aihat-install-panel li { display:flex; gap:1rem; padding:1.2rem; border-top:1px solid rgba(148,163,184,.12); }
+.aihat-install-panel li > span { display:grid; place-items:center; flex:0 0 auto; width:2.4rem; height:2.4rem; border:1px solid rgba(34,211,238,.28); border-radius:.7rem; color:#67e8f9; font-weight:900; }
+.aihat-install-panel li strong { font-size:1rem; }
+.aihat-install-panel li p { margin:.35rem 0 0; color:#7f91aa; line-height:1.65; }
+.aihat-install-panel code { color:#bae6fd; }
+.aihat-release-card { position:relative; padding:1.6rem; border:1px solid rgba(34,211,238,.28); border-radius:1.5rem; background:linear-gradient(160deg,rgba(37,99,235,.17),rgba(5,8,22,.9) 42%); box-shadow:0 30px 80px rgba(0,0,0,.35); }
+.aihat-release-card-top { display:flex; justify-content:space-between; color:#67e8f9; font:900 .7rem/1 monospace; letter-spacing:.12em; }
+.aihat-release-card h3 { margin:2.5rem 0 .7rem; font-size:1.6rem; }
+.aihat-release-card p,.aihat-release-card li { color:#8fa0b8; line-height:1.7; }
+.aihat-release-card ul { margin:1.2rem 0 1.5rem; padding-left:1.1rem; }
+.aihat-card-download { display:flex; justify-content:space-between; padding:1rem; border-radius:.8rem; color:white; background:linear-gradient(90deg,#2563eb,#0891b2); font-weight:900; }
+.aihat-checksum-link { display:block; margin-top:.9rem; text-align:center; color:#7dd3fc; font-size:.78rem; font-weight:800; }
+.aihat-integrity { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; margin-top:clamp(6rem,10vw,10rem); padding:clamp(1.5rem,5vw,3rem); border:1px solid rgba(148,163,184,.12); border-radius:1.5rem; background:rgba(255,255,255,.025); }
+.aihat-integrity pre { overflow:auto; padding:1.4rem; border:1px solid rgba(34,211,238,.16); border-radius:1rem; background:#020611; color:#67e8f9; font-size:.82rem; }
+
+@media (max-width: 1000px) {
+  .aihat-release-shell,.aihat-install-grid { grid-template-columns:1fr; }
+  .aihat-product-stage { max-width:44rem; }
+  .aihat-capability-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width: 700px) {
+  .aihat-release-hero { padding-top:3.5rem; }
+  .aihat-release-copy h1 { font-size:clamp(3rem,15vw,4.8rem); }
+  .aihat-window-body,.aihat-integrity { grid-template-columns:1fr; }
+  .aihat-score-ring { width:10rem; justify-self:center; }
+  .aihat-window-footer { flex-direction:column; }
+  .aihat-release-strip .ba-container,.aihat-capability-grid { grid-template-columns:1fr 1fr; }
+  .aihat-release-strip article:nth-child(2) { border-right:0; }
+}
+@media (max-width: 480px) {
+  .aihat-release-strip .ba-container,.aihat-capability-grid { grid-template-columns:1fr; }
+  .aihat-release-strip article { border-right:0; border-bottom:1px solid rgba(148,163,184,.1); }
+  .aihat-release-actions,.aihat-download-button { width:100%; }
+}
