@@ -8,8 +8,8 @@ export const metadata: Metadata = {
     "Download AIHAT v1.1.0 for Windows — a self-contained infrastructure health audit toolkit from Beyond Automation.",
 };
 
-const downloadUrl = "/downloads/AIHAT-v1.1.0.zip";
-const checksumUrl = "/downloads/AIHAT-v1.1.0.zip.sha256";
+const downloadUrl = "/downloads/AIHAT-v1.1.0-Setup.exe";
+const checksumUrl = "/downloads/AIHAT-v1.1.0-Setup.exe.sha256";
 
 export default function AIHATPage() {
   return (
@@ -40,7 +40,7 @@ export default function AIHATPage() {
                 <span className="aihat-download-icon" aria-hidden="true">↓</span>
                 <span>
                   <strong>Download AIHAT</strong>
-                  <small>v1.1.0 · Windows x64 · ZIP</small>
+                  <small>v1.1.0 · Windows x64 · Installer</small>
                 </span>
                 <b aria-hidden="true">→</b>
               </a>
@@ -48,7 +48,7 @@ export default function AIHATPage() {
             </div>
 
             <div className="aihat-release-trust">
-              <span>✓ Self-contained desktop app</span>
+              <span>✓ Guided Windows installer</span>
               <span>✓ No separate .NET installation</span>
               <span>✓ SHA-256 verified release</span>
             </div>
@@ -125,7 +125,7 @@ export default function AIHATPage() {
               <p className="ba-launch-eyebrow">Three-step start</p>
               <h2>From download to findings in minutes.</h2>
               <ol>
-                <li><span>1</span><div><strong>Download and extract</strong><p>Save the ZIP, verify the checksum, and extract it to a local folder.</p></div></li>
+                <li><span>1</span><div><strong>Download and verify</strong><p>Save the Windows installer and confirm it against the published SHA-256 checksum.</p></div></li>
                 <li><span>2</span><div><strong>Launch the desktop app</strong><p>Open <code>Desktop\AIHAT.Desktop.exe</code>. Administrator access is recommended.</p></div></li>
                 <li><span>3</span><div><strong>Run the audit</strong><p>Review live module progress, actionable findings, and the generated HTML report.</p></div></li>
               </ol>
@@ -136,7 +136,7 @@ export default function AIHATPage() {
                 <span>RELEASE</span><strong>v1.1.0</strong>
               </div>
               <h3>AIHAT for Windows</h3>
-              <p>Self-contained desktop and PowerShell/CLI experiences in one validated package.</p>
+              <p>A guided Windows installer containing the self-contained desktop and PowerShell/CLI experiences.</p>
               <ul>
                 <li>Windows 10, 11, or Server</li>
                 <li>Windows x64 desktop client</li>
@@ -152,9 +152,9 @@ export default function AIHATPage() {
             <div>
               <p className="ba-launch-eyebrow">Release integrity</p>
               <h2>Verify before you run.</h2>
-              <p>Every AIHAT package includes a published SHA-256 checksum so you can confirm the download has not changed.</p>
+              <p>Every AIHAT installer includes a published SHA-256 checksum so you can confirm the download has not changed. Version 1.1.0 is not yet code-signed, so Windows SmartScreen may appear.</p>
             </div>
-            <pre><code>{`Get-FileHash .\\AIHAT-v1.1.0.zip -Algorithm SHA256`}</code></pre>
+            <pre><code>{`Get-FileHash .\\AIHAT-v1.1.0-Setup.exe -Algorithm SHA256`}</code></pre>
           </section>
         </div>
       </section>
