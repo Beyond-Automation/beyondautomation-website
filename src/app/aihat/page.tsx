@@ -8,8 +8,10 @@ export const metadata: Metadata = {
     "Download AIHAT v1.1.0 for Windows — a self-contained infrastructure health audit toolkit from Beyond Automation.",
 };
 
-const downloadUrl = "/downloads/AIHAT-v1.1.0-Setup.exe";
-const checksumUrl = "/downloads/AIHAT-v1.1.0-Setup.exe.sha256";
+const downloadUrl =
+  "https://github.com/Beyond-Automation/AIHAT-Releases/releases/download/v1.1.0/AIHAT-v1.1.0-Setup.exe";
+const checksumUrl =
+  "https://github.com/Beyond-Automation/AIHAT-Releases/releases/download/v1.1.0/AIHAT-v1.1.0-Setup.exe.sha256";
 
 export default function AIHATPage() {
   return (
