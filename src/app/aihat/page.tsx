@@ -3,15 +3,15 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Download AIHAT v1.1.0",
+  title: "Download AIHAT v1.1.1",
   description:
-    "Download AIHAT v1.1.0 for Windows — a self-contained infrastructure health audit toolkit from Beyond Automation.",
+    "Download AIHAT v1.1.1 for Windows — a self-contained infrastructure health audit toolkit from Beyond Automation.",
 };
 
 const downloadUrl =
-  "https://github.com/Beyond-Automation/AIHAT-Releases/releases/download/v1.1.0/AIHAT-v1.1.0-Setup.exe";
+  "https://github.com/Beyond-Automation/AIHAT-Releases/releases/download/v1.1.1/AIHAT-v1.1.1-Setup.exe";
 const checksumUrl =
-  "https://github.com/Beyond-Automation/AIHAT-Releases/releases/download/v1.1.0/AIHAT-v1.1.0-Setup.exe.sha256";
+  "https://github.com/Beyond-Automation/AIHAT-Releases/releases/download/v1.1.1/AIHAT-v1.1.1-Setup.exe.sha256";
 
 export default function AIHATPage() {
   return (
@@ -27,7 +27,7 @@ export default function AIHATPage() {
             <div className="aihat-release-badges">
               <span><i /> Production release</span>
               <span>Windows x64</span>
-              <span>v1.1.0</span>
+              <span>v1.1.1</span>
             </div>
 
             <p className="ba-launch-eyebrow">Beyond Automation flagship product</p>
@@ -42,7 +42,7 @@ export default function AIHATPage() {
                 <span className="aihat-download-icon" aria-hidden="true">↓</span>
                 <span>
                   <strong>Download AIHAT</strong>
-                  <small>v1.1.0 · Windows x64 · Installer</small>
+                  <small>v1.1.1 · Windows x64 · Installer</small>
                 </span>
                 <b aria-hidden="true">→</b>
               </a>
@@ -62,7 +62,7 @@ export default function AIHATPage() {
               <div className="aihat-window-bar">
                 <div><span /><span /><span /></div>
                 <strong>AIHAT / INFRASTRUCTURE HEALTH</strong>
-                <em>v1.1.0</em>
+                <em>v1.1.1</em>
               </div>
               <div className="aihat-window-body">
                 <div className="aihat-score-ring">
@@ -135,7 +135,7 @@ export default function AIHATPage() {
 
             <aside className="aihat-release-card">
               <div className="aihat-release-card-top">
-                <span>RELEASE</span><strong>v1.1.0</strong>
+                <span>RELEASE</span><strong>v1.1.1</strong>
               </div>
               <h3>AIHAT for Windows</h3>
               <p>A guided Windows installer containing the self-contained desktop and PowerShell/CLI experiences.</p>
@@ -154,9 +154,9 @@ export default function AIHATPage() {
             <div>
               <p className="ba-launch-eyebrow">Release integrity</p>
               <h2>Verify before you run.</h2>
-              <p>Every AIHAT installer includes a published SHA-256 checksum so you can confirm the download has not changed. Version 1.1.0 is not yet code-signed, so Windows SmartScreen may appear.</p>
+              <p>Every AIHAT installer includes a published SHA-256 checksum so you can confirm the download has not changed. Version 1.1.1 is not yet code-signed, so Windows SmartScreen may appear.</p>
             </div>
-            <pre><code>{`Get-FileHash .\\AIHAT-v1.1.0-Setup.exe -Algorithm SHA256`}</code></pre>
+            <pre><code>{`Get-FileHash .\\AIHAT-v1.1.1-Setup.exe -Algorithm SHA256`}</code></pre>
           </section>
         </div>
       </section>
