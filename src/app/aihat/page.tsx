@@ -3,9 +3,9 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Download AIHAT v1.1.1",
+  title: "AIHAT release update",
   description:
-    "Download AIHAT v1.1.1 for Windows — a self-contained infrastructure health audit toolkit from Beyond Automation.",
+    "AIHAT for Windows is undergoing final release validation. The download will return after installed-machine testing is complete.",
 };
 
 const downloadUrl =
@@ -25,7 +25,7 @@ export default function AIHATPage() {
         <div className="ba-container aihat-release-shell">
           <div className="aihat-release-copy">
             <div className="aihat-release-badges">
-              <span><i /> Production release</span>
+              <span><i /> Release validation in progress</span>
               <span>Windows x64</span>
               <span>v1.1.1</span>
             </div>
@@ -38,11 +38,11 @@ export default function AIHATPage() {
             </p>
 
             <div className="aihat-release-actions">
-              <a href={downloadUrl} className="aihat-download-button">
+              <span className="aihat-download-button" aria-disabled="true">
                 <span className="aihat-download-icon" aria-hidden="true">↓</span>
                 <span>
-                  <strong>Download AIHAT</strong>
-                  <small>v1.1.1 · Windows x64 · Installer</small>
+                  <strong>Download temporarily unavailable</strong>
+                  <small>Installed-machine validation in progress</small>
                 </span>
                 <b aria-hidden="true">→</b>
               </a>
@@ -145,8 +145,8 @@ export default function AIHATPage() {
                 <li>Internet optional for core audit</li>
                 <li>Private source · public release</li>
               </ul>
-              <a href={downloadUrl} className="aihat-card-download">Download release <span>↓</span></a>
-              <a href={checksumUrl} className="aihat-checksum-link">Download SHA-256 checksum</a>
+              <span className="aihat-card-download" aria-disabled="true">Download paused <span>—</span></span>
+              <span className="aihat-checksum-link">Replacement release pending validation</span>
             </aside>
           </div>
 
