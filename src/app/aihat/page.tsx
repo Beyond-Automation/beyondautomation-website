@@ -45,7 +45,7 @@ export default function AIHATPage() {
                   <small>Installed-machine validation in progress</small>
                 </span>
                 <b aria-hidden="true">→</b>
-              </a>
+              </span>
               <a href="#install" className="aihat-release-secondary">View installation steps</a>
             </div>
 
