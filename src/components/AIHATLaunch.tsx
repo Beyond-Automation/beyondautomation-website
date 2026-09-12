@@ -3,7 +3,7 @@ const features = [
   ["Security assessment", "Review Defender, Firewall, BitLocker, Secure Boot, TPM, and UAC."],
   ["Networking health", "Inspect adapters, DNS, gateway, DHCP, connectivity, and latency."],
   ["HTML reporting", "Generate a responsive report suitable for tickets, audits, and reviews."],
-  ["Modular architecture", "Built around independent, testable PowerShell health modules."],
+  ["Modular architecture", "Powered by independent native .NET health collectors."],
   ["Release integrity", "Professional release engineering includes validation and package integrity checks."],
 ];
 
@@ -13,7 +13,7 @@ export default function AIHATLaunch() {
       <div className="ba-container">
         <div className="ba-launch-heading">
           <p className="ba-launch-eyebrow">Flagship Beyond Automation product</p>
-          <h2>AIHAT v1.1.0 is released.</h2>
+          <h2>AIHAT v1.2.0 is released.</h2>
           <p>
             The Infrastructure Health Audit Toolkit gives IT professionals a repeatable way
             to inspect Windows health, identify operational risk, and create evidence they
@@ -24,10 +24,10 @@ export default function AIHATLaunch() {
         <div className="ba-launch-hero">
           <div className="ba-launch-copy">
             <div className="ba-launch-badges">
-              <span>Released</span>
+              <span>Free public release</span>
               <span>Windows infrastructure</span>
               <span>Private source</span>
-              <span>Validated engineering</span>
+              <span>Signed Windows installer</span>
             </div>
 
             <h3>One audit. Four health modules. One professional report.</h3>
@@ -42,8 +42,8 @@ export default function AIHATLaunch() {
             </div>
 
             <p className="ba-launch-note">
-              AIHAT is showcased publicly while its source code, architecture, and internal
-              release tooling remain proprietary to Beyond Automation.
+              AIHAT is free to use as a signed Windows application while its source code,
+              architecture, and internal release tooling remain proprietary.
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export default function AIHATLaunch() {
               <span />
               <span />
               <span />
-              <strong>AIHAT v1.1.0</strong>
+              <strong>AIHAT v1.2.0</strong>
             </div>
             <pre>{`EXECUTIVE SUMMARY
 --------------------------------
