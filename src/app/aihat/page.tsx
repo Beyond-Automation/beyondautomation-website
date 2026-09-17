@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { DownloadButton } from "@/components/DownloadButton";
 
 export const metadata: Metadata = {
   title: "AIHAT v1.2.0 | Free Windows Infrastructure Health Tool",
@@ -37,17 +38,12 @@ export default function AIHATPage() {
               into clear findings, an executive score, and a professional local report.
             </p>
 
-            <div className="aihat-release-actions">
-              <a href={downloadUrl} className="aihat-download-button">
-                <span className="aihat-download-icon" aria-hidden="true">↓</span>
-                <span>
-                  <strong>Download AIHAT v1.2.0</strong>
-                  <small>Free signed installer · Windows x64</small>
-                </span>
-                <b aria-hidden="true">→</b>
-              </a>
-              <a href="#install" className="aihat-release-secondary">View installation steps</a>
-            </div>
+            <DownloadButton
+              downloadUrl={downloadUrl}
+              checksumUrl={checksumUrl}
+              version="v1.2.0"
+              product="AIHAT"
+            />
 
             <div className="aihat-release-trust">
               <span>✓ Verified publisher: Randall Lewis</span>
@@ -145,7 +141,7 @@ export default function AIHATPage() {
                 <li>Read-only local assessment</li>
                 <li>Private source · free public binary</li>
               </ul>
-              <a className="aihat-card-download" href={downloadUrl}>Download installer <span>→</span></a>
+              <a className="aihat-card-download" href={downloadUrl} data-product="AIHAT" data-version="v1.2.0">Download installer <span>→</span></a>
               <a className="aihat-checksum-link" href={checksumUrl}>Download SHA-256 checksum</a>
             </aside>
           </div>
