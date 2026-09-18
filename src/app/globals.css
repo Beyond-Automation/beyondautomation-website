@@ -86,6 +86,12 @@ a { text-decoration: none; }
   color: #a7f3d0;
 }
 
+.ba-badge-neutral {
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: #cbd5e1;
+}
+
 .ba-badge-dot,
 .live-dot {
   display: inline-block;
