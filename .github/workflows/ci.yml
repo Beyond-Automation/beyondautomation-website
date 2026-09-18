@@ -1,47 +1,34 @@
 name: CI
+
 on:
   pull_request:
-    branches: [main]
   push:
     branches: [main]
-  workflow_dispatch:
+
 permissions:
   contents: read
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
-jobs:
-  validate:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci --include=optional
-      - run: npm run build
-      - run: npm audit --omit=dev --omit=optional --audit-level=high
 
-  deploy:
-    name: Deploy production to Netlify
-    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
-    needs: validate
+jobs:
+  ci:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    permissions:
-      contents: read
-    env:
-      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-      NEXT_PUBLIC_SITE_URL: https://beyondautomation.io
+    timeout-minutes: 10
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - run: npm ci --include=optional
-      - name: Deploy validated main to Netlify
-        run: npx --yes netlify-cli@27.4.2 deploy --build --prod --message "GitHub Actions ${{ github.sha }}"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
