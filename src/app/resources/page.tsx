@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import AffiliateRecommendations from "@/components/AffiliateRecommendations";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -47,6 +48,7 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
+      <AffiliateRecommendations category="Network Monitoring" />
       <Footer />
     </main>
   );
