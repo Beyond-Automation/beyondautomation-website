@@ -1,200 +1,118 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+﻿import React from 'react';
+import { Metadata } from 'next';
+import { NetworkGearCard } from '@/components/NetworkGearCard';
 
 export const metadata: Metadata = {
-  title: "Best Network Monitoring Software for IT Teams",
-  description:
-    "Compare network monitoring tools for small IT departments and MSPs. Auvik, NinjaOne, and alternatives evaluated for real operational use.",
-  alternates: { canonical: "/tools/network-monitoring" },
+  title: 'Network Monitoring Gear Recommendations | Beyond Automation',
+  description: 'Senior IT engineer picks for network monitoring hardware: managed switches, PoE switches, cable testers, patch panels, and SFP+ cables. Gear we actually rack.',
+  openGraph: {
+    title: 'Network Monitoring Gear Recommendations',
+    description: 'Hardware picks from engineers who actually rack this stuff.',
+    type: 'website',
+  },
 };
 
-const tools = [
+const GEAR_RECOMMENDATIONS = [
   {
-    name: "Auvik",
-    tagline: "Cloud-based network management — autodiscovery, topology mapping, and alerting",
-    bestFor: "IT teams managing multi-site or complex networks who need instant topology visibility without manual documentation",
-    strengths: [
-      "Automatic network discovery and topology mapping — no manual diagramming",
-      "Cloud-based — no on-prem collector server to maintain",
-      "Integrates with most major RMM and PSA platforms",
-      "Strong fit for MSPs managing multiple client networks",
-      "Real-time alerting on device changes, outages, and config drift",
-    ],
-    considerations: [
-      "Per-device pricing — costs scale with network size",
-      "Best value when managing 20+ network devices",
-      "Requires outbound internet from managed network for cloud reporting",
-    ],
-    affiliate: true,
-    affiliateNote: "Beyond Automation participates in the Auvik affiliate program. This relationship does not influence the evaluation above.",
-    cta: "Explore Auvik",
-    // Auvik affiliate link via PartnerStack — placeholder until program approved
-    ctaUrl: "https://www.auvik.com",
-    ctaRel: "nofollow",
+    title: 'Netgear GS308E 8-Port Managed Switch',
+    category: 'Managed Switch',
+    amazonUrl: 'https://www.amazon.com/dp/B07PLFCQVK?tag=beyondauto-20',
+        priceRange: '$35-45',
+    description: 'Compact 8-port gigabit switch with VLAN support, QoS, and IGMP snooping. Web-managed interface that doesn\'t require a PhD to configure.',
+    whoNeedsIt: 'Home labs, small office deployments, or anyone who needs basic network segmentation without enterprise pricing.',
+    whyThisPick: 'Best bang for buck in the prosumer managed switch space. Fanless, reliable, and the Plus/Smart Managed feature set covers 90% of use cases. I\'ve deployed dozens of these in client closets.',
   },
   {
-    name: "NinjaOne RMM",
-    tagline: "Unified RMM with endpoint management, patching, monitoring, and remote access",
-    bestFor: "IT teams and MSPs who need endpoint management and network monitoring in one platform",
-    strengths: [
-      "Combines RMM, patch management, and network monitoring",
-      "Rated #1 for support across multiple independent review platforms",
-      "Strong automation and scripting capabilities — good fit for PowerShell-heavy shops",
-      "Single-pane visibility across endpoints and network devices",
-    ],
-    considerations: [
-      "Broader scope than pure network monitoring — pricing reflects full RMM platform",
-      "May be more than needed for teams only wanting network visibility",
-    ],
-    affiliate: true,
-    affiliateNote: "Beyond Automation participates in the NinjaOne affiliate program via PartnerStack.",
-    cta: "Explore NinjaOne",
-    ctaUrl: "https://www.ninjaone.com",
-    ctaRel: "nofollow",
+    title: 'Netgear GS308EP 8-Port PoE+ Managed Switch',
+    category: 'PoE Switch',
+    amazonUrl: 'https://www.amazon.com/dp/B08LR18SC4?tag=beyondauto-20',
+        priceRange: '$90-110',
+    description: '8-port gigabit PoE+ switch with 62W total power budget. Powers cameras, access points, and VoIP phones from a single cable run.',
+    whoNeedsIt: 'Anyone deploying wireless APs, IP cameras, or VoIP phones. Eliminates wall wart chaos and simplifies cable management.',
+    whyThisPick: 'The 62W budget handles 4 Ubiquiti APs or 8 IP phones comfortably. Same reliable Plus Managed platform as the GS308E. Skip the 4-port modelsÃ¢Â€Â”you\'ll outgrow them in 6 months.',
   },
   {
-    name: "PRTG Network Monitor",
-    tagline: "On-premises network monitoring with sensor-based pricing",
-    bestFor: "Teams who need on-premises monitoring and want granular sensor control",
-    strengths: [
-      "Mature, proven platform with broad protocol support",
-      "On-premises option for environments with strict data-residency requirements",
-      "Free tier available for up to 100 sensors",
-    ],
-    considerations: [
-      "Sensor-based pricing can become complex at scale",
-      "On-premises requires infrastructure to host and maintain",
-      "UI is less modern than cloud-native alternatives",
-    ],
-    affiliate: false,
-    affiliateNote: null,
-    cta: "Learn more",
-    ctaUrl: "https://www.paessler.com/prtg",
-    ctaRel: "nofollow",
+    title: 'Klein Tools VDV501-851 Cable Tester Kit',
+    category: 'Cable Tester',
+    amazonUrl: 'https://www.amazon.com/dp/B08GFL2LCZ?tag=beyondauto-20',
+        priceRange: '$80-100',
+    description: 'Tests RJ45 and coax, identifies shorts/opens/miswires, includes tone generator and probe for tracing cables through walls.',
+    whoNeedsIt: 'Anyone who terminates their own cables, inherits undocumented infrastructure, or troubleshoots intermittent connectivity.',
+    whyThisPick: 'Klein is the electrician\'s standard for a reason. The Scout Pro series is built to survive drops, the UI is dead simple, and the tone generator actually penetrates drywall. Fluke is better but 3x the price.',
+  },
+  {
+    title: 'Cable Matters 24-Port Cat6 Patch Panel',
+    category: 'Patch Panel',
+    amazonUrl: 'https://www.amazon.com/dp/B0072JVT02?tag=beyondauto-20',
+        priceRange: '$25-35',
+    description: 'Standard 19" 1U rackmount patch panel with numbered ports. Keystone-compatible, works with Cat5e/Cat6/Cat6a.',
+    whoNeedsIt: 'Any structured cabling deployment. Home labs, server closets, MDFsÃ¢Â€Â”if you\'re running more than 4 drops, use a patch panel.',
+    whyThisPick: 'Cheap, sturdy, and the keystones punch down clean. I\'ve used these in production environments with zero issues. Don\'t overthink patch panelsÃ¢Â€Â”this one works.',
+  },
+  {
+    title: '10Gtek SFP+ DAC Cable 3m',
+    category: 'SFP+ Cable',
+    amazonUrl: 'https://www.amazon.com/dp/B00WHS3NCA?tag=beyondauto-20',
+        priceRange: '$15-25',
+    description: 'Direct attach copper cable for 10GbE connections between switches and servers. 3 meter length, passive, low latency.',
+    whoNeedsIt: 'Lab environments, storage networks, or anyone connecting 10Gb devices within the same rack or adjacent racks.',
+    whyThisPick: 'DACs are cheaper, lower latency, and more reliable than SFP+ transceivers with fiber for short runs. 10Gtek cables work fine in Ubiquiti, Mikrotik, and most Cisco gear. Save the fiber budget for long runs.',
   },
 ];
 
-export default function NetworkMonitoringPage() {
+export default function NetworkMonitoringPage(): React.ReactElement {
   return (
-    <main id="main-content" className="min-h-screen bg-[#050816] text-white">
-      <Navbar />
-
-      <section className="ba-index-page">
-        <div className="ba-container">
-          <p className="ba-launch-eyebrow">IT tools guide</p>
-          <h1>Network monitoring software for IT teams.</h1>
-          <p className="ba-product-lead">
-            The right network monitoring tool depends on your environment size, whether you manage
-            one site or many, and how much infrastructure you want to run yourself. This comparison
-            evaluates the tools most relevant to working IT teams and MSPs.
+    <main className="min-h-screen bg-zinc-950">
+      <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-12">
+          <span className="text-sm font-mono text-emerald-500 uppercase tracking-wider">
+            Tools &amp; Gear
+          </span>
+          <h1 className="text-4xl font-bold text-zinc-100 mt-2 mb-4">
+            Network Monitoring Gear
+          </h1>
+          <p className="text-lg text-zinc-400 max-w-2xl">
+            Hardware picks from someone who&apos;s actually racked this stuff. No affiliate-bait roundupsÃ¢Â€Â”just the gear I reach for when building out monitoring infrastructure.
           </p>
         </div>
-      </section>
 
-      <section className="ba-container" style={{ padding: "2rem 0 4rem" }}>
-        <p style={{ marginBottom: "2rem", opacity: 0.7 }}>
-          Beyond Automation evaluates tools based on operational fit, not commission rates.
-          Affiliate relationships are disclosed on each entry and do not change the assessment.
-        </p>
+        {/* Affiliate Disclosure */}
+        <div className="mb-12 p-4 border border-zinc-800 rounded-lg bg-zinc-900/30">
+          <p className="text-sm text-zinc-500">
+            <span className="font-medium text-zinc-400">Disclosure:</span> Links below are Amazon Associates affiliate links. I earn a small commission if you buy through themÃ¢Â€Â”at no extra cost to you. I only recommend gear I&apos;ve personally used or would deploy in production.
+          </p>
+        </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-          {tools.map((tool) => (
-            <article
-              key={tool.name}
-              style={{
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "0.75rem",
-                padding: "2rem",
-                background: "rgba(255,255,255,0.03)",
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1rem" }}>
-                <div>
-                  <h2 style={{ marginBottom: "0.25rem" }}>{tool.name}</h2>
-                  <p style={{ opacity: 0.7, marginBottom: "0" }}>{tool.tagline}</p>
-                </div>
-                {tool.affiliate && (
-                  <span style={{ fontSize: "0.75rem", padding: "0.25rem 0.6rem", border: "1px solid rgba(255,255,255,0.2)", borderRadius: "99px", whiteSpace: "nowrap" }}>
-                    Affiliate
-                  </span>
-                )}
-              </div>
-
-              <p style={{ marginTop: "1.25rem" }}>
-                <strong>Best for:</strong> {tool.bestFor}
-              </p>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", marginTop: "1.25rem" }}>
-                <div>
-                  <p style={{ fontWeight: 600, marginBottom: "0.5rem" }}>Strengths</p>
-                  <ul style={{ paddingLeft: "1.25rem", opacity: 0.85 }}>
-                    {tool.strengths.map((s) => <li key={s} style={{ marginBottom: "0.35rem" }}>{s}</li>)}
-                  </ul>
-                </div>
-                <div>
-                  <p style={{ fontWeight: 600, marginBottom: "0.5rem" }}>Considerations</p>
-                  <ul style={{ paddingLeft: "1.25rem", opacity: 0.85 }}>
-                    {tool.considerations.map((c) => <li key={c} style={{ marginBottom: "0.35rem" }}>{c}</li>)}
-                  </ul>
-                </div>
-              </div>
-
-              <div style={{ marginTop: "1.5rem", display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-                <a
-                  href={tool.ctaUrl}
-                  rel={tool.ctaRel}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.4rem",
-                    padding: "0.6rem 1.25rem",
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    borderRadius: "0.5rem",
-                    fontWeight: 600,
-                    textDecoration: "none",
-                    color: "inherit",
-                  }}
-                >
-                  {tool.cta} →
-                </a>
-                {tool.affiliateNote && (
-                  <p style={{ fontSize: "0.75rem", opacity: 0.5, margin: 0 }}>{tool.affiliateNote}</p>
-                )}
-              </div>
-            </article>
+        {/* Product Grid */}
+        <div className="space-y-6">
+          {GEAR_RECOMMENDATIONS.map((gear) => (
+            <NetworkGearCard
+              key={gear.amazonUrl}
+              title={gear.title}
+              category={gear.category}
+              amazonUrl={gear.amazonUrl}
+                            priceRange={gear.priceRange}
+              description={gear.description}
+              whoNeedsIt={gear.whoNeedsIt}
+              whyThisPick={gear.whyThisPick}
+            />
           ))}
         </div>
 
-        <div style={{ marginTop: "3rem", padding: "1.5rem", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "0.75rem" }}>
-          <p style={{ fontWeight: 600, marginBottom: "0.5rem" }}>Related Beyond Automation tools</p>
-          <p style={{ opacity: 0.7, marginBottom: "1rem" }}>
-            AIHAT provides free Windows infrastructure health auditing — a useful complement to
-            network monitoring for endpoint visibility before deploying a full RMM.
+        {/* Footer Note */}
+        <div className="mt-16 pt-8 border-t border-zinc-800">
+          <h2 className="text-xl font-semibold text-zinc-100 mb-4">
+            A note on monitoring software
+          </h2>
+          <p className="text-zinc-400">
+            This page covers physical gear. For network monitoring software (SNMP polling, flow analysis, alerting), we&apos;re evaluating partnerships with vendors like Auvik and NinjaOne. Check backÃ¢Â€Â”or subscribe to the newsletterÃ¢Â€Â”for software recommendations when those go live.
           </p>
-          <Link
-            href="/aihat"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.4rem",
-              padding: "0.6rem 1.25rem",
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.15)",
-              borderRadius: "0.5rem",
-              fontWeight: 600,
-              textDecoration: "none",
-              color: "inherit",
-            }}
-          >
-            Explore AIHAT →
-          </Link>
         </div>
-      </section>
-
-      <Footer />
+      </div>
     </main>
   );
 }
+
+
+

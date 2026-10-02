@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = "https://beyondautomation.io";
@@ -14,13 +14,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/resources",
     "/privacy",
     "/terms",
+    "/tools",
+    "/tools/network-monitoring",
   ];
 
   return routes.map((route, index) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route.startsWith("/journal") ? "monthly" : "weekly",
-    priority: index === 0 ? 1 : route === "/aihat" ? 0.9 : 0.7,
+    priority: index === 0 ? 1 : route === "/aihat" ? 0.9 : route === "/tools/network-monitoring" ? 0.7 : 0.7,
   }));
 }
-
