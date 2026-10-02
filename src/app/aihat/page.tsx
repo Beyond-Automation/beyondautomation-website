@@ -1,86 +1,162 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { DownloadButton } from "@/components/DownloadButton";
 
 export const metadata: Metadata = {
-  title: "AIHAT v1.0.0",
+  title: "AIHAT v1.2.0 | Free Windows Infrastructure Health Tool",
   description:
-    "Download AIHAT, the open-source Infrastructure Health Audit Toolkit for Windows operations.",
+    "Download the free, signed AIHAT v1.2.0 Windows application from Beyond Automation.",
 };
 
-const releaseUrl = "https://github.com/Beyond-Automation/AIHAT/releases/latest";
-const repositoryUrl = "https://github.com/Beyond-Automation/AIHAT";
+const downloadUrl =
+  "https://github.com/Beyond-Automation/AIHAT-Releases/releases/download/v1.2.0/AIHAT-v1.2.0-Setup.exe";
+const checksumUrl =
+  "https://github.com/Beyond-Automation/AIHAT-Releases/releases/download/v1.2.0/AIHAT-v1.2.0-Setup.exe.sha256";
 
 export default function AIHATPage() {
   return (
     <main id="main-content" className="min-h-screen bg-[#050816] text-white">
       <Navbar />
-      <section className="ba-product-page">
-        <div className="ba-container">
-          <p className="ba-launch-eyebrow">Beyond Automation flagship product</p>
-          <h1>AIHAT</h1>
-          <h2>Infrastructure Health Audit Toolkit</h2>
-          <p className="ba-product-lead">
-            Audit Windows health, security, updates, and networking from one
-            PowerShell command. Review the console dashboard, share the HTML report,
-            or use structured JSON and object output in your own workflows.
-          </p>
 
-          <div className="ba-launch-actions">
-            <a href={releaseUrl} target="_blank" rel="noreferrer" className="ba-button ba-button-primary">
-              Download latest release →
-            </a>
-            <a href={`${repositoryUrl}#readme`} target="_blank" rel="noreferrer" className="ba-button ba-button-secondary">
-              Documentation
-            </a>
-            <a href={repositoryUrl} target="_blank" rel="noreferrer" className="ba-text-link">
-              GitHub repository ↗
-            </a>
+      <section className="aihat-release-hero">
+        <div className="aihat-release-grid" aria-hidden="true" />
+        <div className="aihat-release-glow" aria-hidden="true" />
+
+        <div className="ba-container aihat-release-shell">
+          <div className="aihat-release-copy">
+            <div className="aihat-release-badges">
+              <span><i /> Free public release</span>
+              <span>Windows x64</span>
+              <span>v1.2.0</span>
+            </div>
+
+            <p className="ba-launch-eyebrow">Beyond Automation flagship product</p>
+            <h1>Know the health of your Windows system.</h1>
+            <p className="aihat-release-lead">
+              AIHAT turns system health, Windows Update, security, and network checks
+              into clear findings, an executive score, and a professional local report.
+            </p>
+
+            <DownloadButton
+              downloadUrl={downloadUrl}
+              checksumUrl={checksumUrl}
+              version="v1.2.0"
+              product="AIHAT"
+            />
+
+            <div className="aihat-release-trust">
+              <span>✓ Verified publisher: Randall Lewis</span>
+              <span>✓ No separate .NET installation</span>
+              <span>✓ No telemetry or cloud upload</span>
+            </div>
           </div>
 
-          <div className="ba-product-facts">
-            <article><strong>4</strong><span>stable health modules</span></article>
-            <article><strong>34</strong><span>automated tests</span></article>
-            <article><strong>1.0.0</strong><span>stable release</span></article>
-            <article><strong>MIT</strong><span>open-source license</span></article>
-          </div>
-
-          <div className="ba-product-content-grid">
-            <article>
-              <h3>What AIHAT checks</h3>
-              <ul>
-                <li>System health and resource utilization</li>
-                <li>Windows Update and pending reboot state</li>
-                <li>Defender, Firewall, BitLocker, Secure Boot, TPM, and UAC</li>
-                <li>Adapters, IP addressing, DNS, gateway, DHCP, and connectivity</li>
-              </ul>
-            </article>
-            <article>
-              <h3>What AIHAT produces</h3>
-              <ul>
-                <li>Executive console health score</li>
-                <li>Responsive HTML report</li>
-                <li>Structured logs</li>
-                <li>PowerShell object and JSON output</li>
-              </ul>
-            </article>
-          </div>
-
-          <section className="ba-product-command">
-            <p>Quick start</p>
-            <pre>{`Expand-Archive .\\AIHAT-v1.0.0.zip -DestinationPath C:\\Tools\\AIHAT
-Set-Location C:\\Tools\\AIHAT
-.\\Start-AIHAT.ps1`}</pre>
-          </section>
-
-          <div className="ba-product-links">
-            <a href={`${repositoryUrl}/blob/main/docs/INSTALLATION.md`} target="_blank" rel="noreferrer">Installation guide →</a>
-            <a href={`${repositoryUrl}/blob/main/docs/USER-GUIDE.md`} target="_blank" rel="noreferrer">User guide →</a>
-            <a href={`${repositoryUrl}/blob/main/docs/RELEASE-NOTES-v1.0.0.md`} target="_blank" rel="noreferrer">Release notes →</a>
-            <a href={`${repositoryUrl}/blob/main/ROADMAP.md`} target="_blank" rel="noreferrer">Roadmap →</a>
+          <div className="aihat-product-stage" aria-label="AIHAT audit result preview">
+            <div className="aihat-stage-orbit" aria-hidden="true" />
+            <div className="aihat-window">
+              <div className="aihat-window-bar">
+                <div><span /><span /><span /></div>
+                <strong>AIHAT / INFRASTRUCTURE HEALTH</strong>
+                <em>v1.2.0</em>
+              </div>
+              <div className="aihat-window-body">
+                <div className="aihat-score-ring">
+                  <span>OVERALL HEALTH</span>
+                  <strong>95</strong>
+                  <small>Warning</small>
+                </div>
+                <div className="aihat-module-list">
+                  <div><span>System Health</span><strong className="is-healthy">Healthy</strong></div>
+                  <div><span>Windows Update</span><strong className="is-healthy">Healthy</strong></div>
+                  <div><span>Security Health</span><strong className="is-warning">Warning</strong></div>
+                  <div><span>Networking Health</span><strong className="is-healthy">Healthy</strong></div>
+                </div>
+              </div>
+              <div className="aihat-window-footer">
+                <span>&gt; All required collectors completed</span>
+                <strong>HTML report generated ✓</strong>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <section className="aihat-release-strip">
+        <div className="ba-container">
+          <article><strong>4</strong><span>native health collectors</span></article>
+          <article><strong>100%</strong><span>local assessment</span></article>
+          <article><strong>1</strong><span>professional report</span></article>
+          <article><strong>0</strong><span>runtime installs required</span></article>
+        </div>
+      </section>
+
+      <section className="aihat-release-content">
+        <div className="ba-container">
+          <div className="aihat-section-heading">
+            <p className="ba-launch-eyebrow">What you get</p>
+            <h2>One download. Immediate operational clarity.</h2>
+            <p>Built for infrastructure professionals who need useful evidence—not another noisy dashboard.</p>
+          </div>
+
+          <div className="aihat-capability-grid">
+            <article>
+              <span>01</span><h3>System health</h3>
+              <p>Review memory, storage, uptime, operating system, processor, and core system condition.</p>
+            </article>
+            <article>
+              <span>02</span><h3>Update readiness</h3>
+              <p>Surface Windows Update condition, installed updates, and restart indicators.</p>
+            </article>
+            <article>
+              <span>03</span><h3>Security posture</h3>
+              <p>Inspect Defender, Firewall, BitLocker, Secure Boot, TPM, UAC, and local administrators.</p>
+            </article>
+            <article>
+              <span>04</span><h3>Network health</h3>
+              <p>Check adapters, addressing, DNS, gateways, connectivity, and latency.</p>
+            </article>
+          </div>
+
+          <div id="install" className="aihat-install-grid">
+            <section className="aihat-install-panel">
+              <p className="ba-launch-eyebrow">Three-step start</p>
+              <h2>From download to findings in minutes.</h2>
+              <ol>
+                <li><span>1</span><div><strong>Download and verify</strong><p>Save the installer and confirm it against the published SHA-256 checksum.</p></div></li>
+                <li><span>2</span><div><strong>Install and approve UAC</strong><p>Run the signed installer, launch AIHAT, and approve administrator elevation for complete evidence.</p></div></li>
+                <li><span>3</span><div><strong>Run the audit</strong><p>Review module status, actionable findings, and the generated local HTML report.</p></div></li>
+              </ol>
+            </section>
+
+            <aside className="aihat-release-card">
+              <div className="aihat-release-card-top">
+                <span>FREE RELEASE</span><strong>v1.2.0</strong>
+              </div>
+              <h3>AIHAT for Windows</h3>
+              <p>A signed Windows installer containing the self-contained native .NET desktop assessment application.</p>
+              <ul>
+                <li>Windows 10, 11, or Server</li>
+                <li>Windows x64</li>
+                <li>Read-only local assessment</li>
+                <li>Private source · free public binary</li>
+              </ul>
+              <a className="aihat-card-download" href={downloadUrl} data-product="AIHAT" data-version="v1.2.0">Download installer <span>→</span></a>
+              <a className="aihat-checksum-link" href={checksumUrl}>Download SHA-256 checksum</a>
+            </aside>
+          </div>
+
+          <section className="aihat-integrity">
+            <div>
+              <p className="ba-launch-eyebrow">Release integrity</p>
+              <h2>Signed. Timestamped. Verifiable.</h2>
+              <p>AIHAT v1.2.0 is Authenticode-signed and timestamped. Windows identifies the verified publisher as Randall Lewis, and the matching SHA-256 file lets you verify the download before installation.</p>
+            </div>
+            <pre><code>{`Get-FileHash .\\AIHAT-v1.2.0-Setup.exe -Algorithm SHA256`}</code></pre>
+          </section>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );

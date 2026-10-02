@@ -3,19 +3,17 @@ const products = [
     badge: "FLAGSHIP PRODUCT",
     name: "AIHAT",
     subtitle: "Infrastructure Health Audit Toolkit",
-    text: "A practical PowerShell toolkit that helps IT professionals inspect system health, Windows Update status, and infrastructure readiness with consistent reporting.",
+    text: "A practical Windows infrastructure assessment toolkit that helps IT professionals inspect system health, Windows Update status, security posture, networking health, and infrastructure readiness with consistent reporting.",
     points: ["System health collection", "Windows Update auditing", "Structured reports", "Extensible modules"],
-    status: "In active development",
-    href: "https://github.com/Beyond-Automation/AIHAT",
+    status: "Released",
   },
   {
-    badge: "VERSION 1.0.0",
+    badge: "PRIVATE ENGINEERING CORE",
     name: "Beyond Automation Platform",
     subtitle: "The foundation behind every product",
-    text: "A tested, versioned PowerShell platform for building reliable automation products with plugins, events, dependency handling, and release tooling.",
-    points: ["Plugin architecture", "Event framework", "Release management", "Automated validation"],
-    status: "Stable release",
-    href: "https://github.com/Beyond-Automation/BeyondAutomation-Platform",
+    text: "A tested, versioned engineering platform for building reliable automation products with reusable architecture, validation, and release tooling.",
+    points: ["Reusable architecture", "Release management", "Automated validation", "Product engineering standards"],
+    status: "Private core",
   },
 ];
 
@@ -34,7 +32,7 @@ export default function AIHAT() {
               <article key={product.name} className={`product-card product-card-${index + 1}`}>
                 <div className="product-topline">
                   <span>{product.badge}</span>
-                  <i className={index === 0 ? "status-building" : "status-stable"} />
+                  <i className={index === 0 ? "status-stable" : "status-building"} />
                 </div>
                 <div className="product-symbol" aria-hidden="true">{index === 0 ? "A" : "BA"}</div>
                 <h3>{product.name}</h3>
@@ -45,7 +43,9 @@ export default function AIHAT() {
                 </ul>
                 <div className="product-footer">
                   <span>{product.status}</span>
-                  <a href={product.href} target="_blank" rel="noreferrer">Explore project <b aria-hidden="true">↗</b></a>
+                  <a href={index === 0 ? "/aihat" : "/products"}>
+                    {index === 0 ? "Explore AIHAT" : "Explore products"} <b aria-hidden="true">→</b>
+                  </a>
                 </div>
               </article>
             ))}
@@ -78,16 +78,14 @@ export default function AIHAT() {
       <section className="cta-section">
         <div className="page-shell cta-layout">
           <div>
-            <span className="section-kicker">Follow the build</span>
-            <h2>See what we are engineering next.</h2>
+            <span className="section-kicker">Beyond Automation</span>
+            <h2>Explore the products we are building for real IT operations.</h2>
           </div>
-          <a href="https://github.com/Beyond-Automation" target="_blank" rel="noreferrer" className="button button-light">
-            Explore Beyond Automation <span aria-hidden="true">↗</span>
+          <a href="/products" className="button button-light">
+            Explore products <span aria-hidden="true">→</span>
           </a>
         </div>
       </section>
     </>
   );
 }
-
-

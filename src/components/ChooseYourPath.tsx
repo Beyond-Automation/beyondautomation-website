@@ -1,50 +1,50 @@
 const paths = [
   {
-    label: "Available now",
-    name: "Community",
-    price: "Free",
-    description: "Start with transparent, practical infrastructure auditing built for working IT professionals.",
+    label: "Released",
+    name: "AIHAT",
+    price: "Available now",
+    description: "Explore practical Windows infrastructure auditing built for working IT professionals.",
     features: [
-      "AIHAT open-source toolkit",
+      "Windows infrastructure health auditing",
       "Windows health and update checks",
-      "Structured PowerShell logging",
-      "Documentation and roadmap access",
-      "Community issue tracking",
+      "Structured reporting",
+      "Security and networking assessment",
+      "Private proprietary source",
     ],
     cta: "Explore AIHAT",
-    href: "https://github.com/Beyond-Automation/AIHAT",
+    href: "/aihat",
     featured: true,
   },
   {
-    label: "In development",
-    name: "Professional",
-    price: "Coming soon",
-    description: "Deeper reporting and scheduled operational visibility for individual engineers and growing IT teams.",
+    label: "Release candidate",
+    name: "PatchPilot",
+    price: "Approaching launch",
+    description: "Windows patch-health assessment built for clear evidence, coverage, and remediation decisions.",
     features: [
-      "Operational audit summaries",
-      "Scheduled health audits",
-      "PDF and HTML reporting",
-      "Historical trend analysis",
-      "Email-ready findings",
+      "Patch-health assessment",
+      "Clear operational findings",
+      "Professional Windows experience",
+      "Release-gated engineering",
+      "Private proprietary source",
     ],
-    cta: "View the roadmap",
-    href: "https://github.com/Beyond-Automation/AIHAT/blob/main/ROADMAP.md",
+    cta: "Follow the build",
+    href: "/journal",
     featured: false,
   },
   {
-    label: "Future vision",
-    name: "Enterprise",
-    price: "Planned",
-    description: "Centralized infrastructure intelligence for multi-site organizations, MSPs, and operational teams.",
+    label: "Launching",
+    name: "NetFixLab",
+    price: "Live web experience",
+    description: "Practical network troubleshooting guidance built around diagnosis first.",
     features: [
-      "Multi-site management",
-      "Central operations dashboard",
-      "Team collaboration",
-      "Role-based access",
-      "API and platform integrations",
+      "Troubleshooting workflows",
+      "Diagnostic guidance",
+      "Practical equipment guidance",
+      "Public customer experience",
+      "Private implementation source",
     ],
-    cta: "Follow development",
-    href: "https://github.com/Beyond-Automation",
+    cta: "Follow the launch",
+    href: "/journal",
     featured: false,
   },
 ];
@@ -59,7 +59,7 @@ function CheckIcon() {
 
 export default function ChooseYourPath() {
   return (
-    <section id="pricing" className="path-section">
+    <section id="portfolio" className="path-section">
       <div className="path-grid-bg" aria-hidden="true" />
       <div className="path-glow path-glow-left" aria-hidden="true" />
       <div className="path-glow path-glow-right" aria-hidden="true" />
@@ -67,13 +67,12 @@ export default function ChooseYourPath() {
       <div className="ba-container path-container">
         <div className="path-heading">
           <div>
-            <p className="path-eyebrow">Choose Your Path</p>
-            <h2>Start free. Grow only when the work demands it.</h2>
+            <p className="path-eyebrow">Product Portfolio</p>
+            <h2>Choose the problem. Explore the product.</h2>
           </div>
           <p>
-            Beyond Automation begins with useful, open tools. Professional and
-            Enterprise capabilities will be added only when they create measurable
-            operational value.
+            Beyond Automation shows customers what each product solves while keeping
+            proprietary source code, architecture, and internal release tooling private.
           </p>
         </div>
 
@@ -110,8 +109,6 @@ export default function ChooseYourPath() {
 
               <a
                 href={path.href}
-                target="_blank"
-                rel="noreferrer"
                 className={path.featured ? "path-cta path-cta-primary" : "path-cta"}
               >
                 <span>{path.cta}</span>
@@ -124,12 +121,11 @@ export default function ChooseYourPath() {
         <div className="path-note">
           <span className="path-note-icon">BA</span>
           <div>
-            <strong>Built openly. Expanded responsibly.</strong>
-            <p>No fake pricing, locked features, or enterprise promises before the product is ready.</p>
+            <strong>Public proof. Private engineering core.</strong>
+            <p>Show the value, protect the implementation, and ship only when the product meets the release standard.</p>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

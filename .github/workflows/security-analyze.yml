@@ -1,0 +1,28 @@
+name: Security Analyze
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: analyze
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --include=optional
+      - name: Production dependency audit
+        run: npm audit --omit=dev --omit=optional --audit-level=high
+      - name: Production build validation
+        run: npm run build
