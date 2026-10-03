@@ -7,6 +7,13 @@ const products = [
     cta: "Explore AIHAT",
   },
   {
+    name: "OffboardPilot",
+    status: "Available",
+    description: "Hybrid AD + M365 offboarding automation in a single guided PowerShell script — six steps, a reconciliation report, and a full session transcript.",
+    href: "/products/offboardpilot",
+    cta: "Get OffboardPilot",
+  },
+  {
     name: "PatchPilot",
     status: "Release Candidate",
     description: "Windows patch-health assessment built to turn patch state into clear evidence, coverage, and remediation decisions.",

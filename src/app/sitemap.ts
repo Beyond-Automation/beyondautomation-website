@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/aihat",
     "/products",
+    "/products/offboardpilot",
     "/journal",
     "/journal/building-aihat-v1",
     "/journal/powershell-release-engineering",
