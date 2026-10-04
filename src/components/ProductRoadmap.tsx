@@ -22,10 +22,10 @@ const products = [
   },
   {
     name: "NetFixLab",
-    status: "Launching",
+    status: "Live",
     description: "Diagnosis-first network troubleshooting guidance designed to help people isolate problems before spending money on the wrong fix.",
-    href: "/journal",
-    cta: "Follow the launch",
+    href: "https://netfixlab.com",
+    cta: "Visit NetFixLab",
   },
   {
     name: "Engineering Resources",

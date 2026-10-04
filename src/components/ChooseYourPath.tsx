@@ -32,7 +32,7 @@ const paths = [
     featured: false,
   },
   {
-    label: "Launching",
+    label: "Live",
     name: "NetFixLab",
     price: "Live web experience",
     description: "Practical network troubleshooting guidance built around diagnosis first.",
@@ -43,8 +43,8 @@ const paths = [
       "Public customer experience",
       "Private implementation source",
     ],
-    cta: "Follow the launch",
-    href: "/journal",
+    cta: "Visit NetFixLab",
+    href: "https://netfixlab.com",
     featured: false,
   },
 ];
