@@ -18,6 +18,10 @@ const resourceLinks: FooterItem[] = [
   { title: "Products", detail: "Current product portfolio", href: "/products" },
 ];
 
+const serviceLinks: FooterItem[] = [
+  { title: "Automation Assessment", detail: "Analyze one process for $299 — fixed price", href: "/services/automation-assessment" },
+];
+
 const companyLinks: FooterItem[] = [
   { title: "About", detail: "Mission and engineering approach", href: "/#about" },
   { title: "Privacy", detail: "Privacy policy", href: "/privacy" },
@@ -84,6 +88,12 @@ export default function Footer() {
             <h2>Products</h2>
             <div className="ba-footer-links">{productLinks.map((item) => <FooterLink key={item.title} item={item} />)}</div>
             <Link className="ba-footer-column-action" href="/products">View all products →</Link>
+          </section>
+
+          <section className="ba-footer-column">
+            <h2>Services</h2>
+            <div className="ba-footer-links">{serviceLinks.map((item) => <FooterLink key={item.title} item={item} />)}</div>
+            <Link className="ba-footer-column-action" href="/services/automation-assessment">Start an assessment →</Link>
           </section>
 
           <section className="ba-footer-column">

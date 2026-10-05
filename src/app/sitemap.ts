@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms",
     "/tools",
     "/tools/network-monitoring",
+    "/services/automation-assessment",
   ];
 
   return routes.map((route, index) => ({
