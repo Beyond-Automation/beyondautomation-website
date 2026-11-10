@@ -5,10 +5,9 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "OffboardPilot | Hybrid AD + M365 Offboarding Automation (PowerShell)",
   description:
-    "One PowerShell script. Six steps. Full audit trail. Automates the complete hybrid AD + M365 employee offboarding workflow — no hardcoded values, works in any environment.",
+    "One PowerShell script. Six steps. Full audit trail. Automates the complete hybrid AD + M365 employee offboarding workflow - no hardcoded values, works in any environment.",
 };
 
-const gumroadUrl = "https://lewbeast.gumroad.com/l/offboardpilot";
 const githubUrl = "https://github.com/Beyond-Automation/OffboardPilot";
 
 export default function OffboardPilotPage() {
@@ -16,7 +15,7 @@ export default function OffboardPilotPage() {
     <main id="main-content" className="min-h-screen bg-[#050816] text-white">
       <Navbar />
 
-      {/* ── Hero ── */}
+      {/* Hero */}
       <section className="op-hero">
         <div className="op-grid" aria-hidden="true" />
         <div className="op-glow" aria-hidden="true" />
@@ -27,9 +26,10 @@ export default function OffboardPilotPage() {
               <span>PowerShell 5.1 / 7</span>
               <span>Hybrid AD + M365</span>
               <span>v1.0</span>
+              <span>Open Source</span>
             </div>
 
-            <p className="ba-launch-eyebrow">Beyond Automation script pack</p>
+            <p className="ba-launch-eyebrow">Beyond Automation — open source</p>
             <h1>Stop doing offboarding by hand.</h1>
             <p className="op-lead">
               OffboardPilot automates the complete hybrid AD + M365 offboarding
@@ -39,18 +39,15 @@ export default function OffboardPilotPage() {
             </p>
 
             <div className="op-actions">
-              <a href={gumroadUrl} className="ba-button ba-button-primary op-buy-btn" target="_blank" rel="noopener noreferrer">
-                Get OffboardPilot — $39 <span>→</span>
-              </a>
-              <a href={githubUrl} className="ba-button ba-button-secondary" target="_blank" rel="noopener noreferrer">
-                View on GitHub
+              <a href={githubUrl} className="ba-button ba-button-primary op-buy-btn" target="_blank" rel="noopener noreferrer">
+                Get OffboardPilot on GitHub <span></span>
               </a>
             </div>
 
             <div className="op-trust">
-              <span>✓ Full commented source — no obfuscation</span>
-              <span>✓ No hardcoded values</span>
-              <span>✓ Works in any hybrid environment</span>
+              <span>Full commented source — no obfuscation</span>
+              <span>No hardcoded values</span>
+              <span>MIT licensed — free to use</span>
             </div>
           </div>
 
@@ -64,25 +61,25 @@ export default function OffboardPilotPage() {
                 <em>v1.0</em>
               </div>
               <div className="op-window-body">
-                <div className="op-term-line op-dim"># ── OffboardPilot v1.0 ──────────────────</div>
+                <div className="op-term-line op-dim"># OffboardPilot v1.0</div>
                 <div className="op-term-line"><span className="op-dim">PS&gt; </span><span className="op-cyan">.\Invoke-UserOffboard.ps1</span></div>
                 <div className="op-term-line op-spacer" />
                 <div className="op-term-line op-white">Enter UPN to offboard:</div>
                 <div className="op-term-line op-yellow">jsmith@contoso.com</div>
                 <div className="op-term-line op-spacer" />
-                <div className="op-term-line"><span className="op-green">[✓]</span> EXO identity DN captured</div>
+                <div className="op-term-line"><span className="op-green">[+]</span> EXO identity DN captured</div>
                 <div className="op-term-line op-spacer" />
-                <div className="op-term-line op-cyan">── STEP 1 · AD ACCOUNT ─────────────────</div>
-                <div className="op-term-line"><span className="op-green">[✓]</span> AD account disabled</div>
+                <div className="op-term-line op-cyan">STEP 1 — AD ACCOUNT</div>
+                <div className="op-term-line"><span className="op-green">[+]</span> AD account disabled</div>
                 <div className="op-term-line op-spacer" />
-                <div className="op-term-line op-cyan">── STEP 2 · ENTRA ID ───────────────────</div>
-                <div className="op-term-line"><span className="op-green">[✓]</span> Sign-in blocked</div>
-                <div className="op-term-line"><span className="op-green">[✓]</span> Sessions + tokens revoked</div>
+                <div className="op-term-line op-cyan">STEP 2 — ENTRA ID</div>
+                <div className="op-term-line"><span className="op-green">[+]</span> Sign-in blocked</div>
+                <div className="op-term-line"><span className="op-green">[+]</span> Sessions + tokens revoked</div>
                 <div className="op-term-line op-spacer" />
-                <div className="op-term-line op-cyan">── STEP 4 · MAILBOX ────────────────────</div>
-                <div className="op-term-line"><span className="op-green">[✓]</span> Converted to Shared mailbox</div>
-                <div className="op-term-line"><span className="op-green">[✓]</span> Forwarding → manager@contoso.com</div>
-                <div className="op-term-line"><span className="op-green">[✓]</span> 3 licenses removed</div>
+                <div className="op-term-line op-cyan">STEP 4 — MAILBOX</div>
+                <div className="op-term-line"><span className="op-green">[+]</span> Converted to Shared mailbox</div>
+                <div className="op-term-line"><span className="op-green">[+]</span> Forwarding to manager@contoso.com</div>
+                <div className="op-term-line"><span className="op-green">[+]</span> 3 licenses removed</div>
                 <div className="op-term-line op-spacer" />
                 <div className="op-term-line op-white op-bold">OFFBOARD COMPLETE — 6/6 steps passed</div>
                 <div className="op-term-line op-dim">Transcript → C:\Scripts\Logs\</div>
@@ -92,7 +89,7 @@ export default function OffboardPilotPage() {
         </div>
       </section>
 
-      {/* ── Stats strip ── */}
+      {/* Stats strip */}
       <section className="aihat-release-strip">
         <div className="ba-container">
           <article><strong>6</strong><span>automated steps</span></article>
@@ -102,7 +99,7 @@ export default function OffboardPilotPage() {
         </div>
       </section>
 
-      {/* ── The Problem ── */}
+      {/* The Problem */}
       <section className="op-content">
         <div className="ba-container">
           <div className="op-problem">
@@ -128,7 +125,7 @@ export default function OffboardPilotPage() {
             </div>
           </div>
 
-          {/* ── Steps grid ── */}
+          {/* Steps grid */}
           <div className="op-section-heading">
             <p className="ba-launch-eyebrow">What it does</p>
             <h2>Six steps. One script. Nothing missed.</h2>
@@ -161,7 +158,7 @@ export default function OffboardPilotPage() {
             </article>
           </div>
 
-          {/* ── Purchase panel ── */}
+          {/* Feature + GitHub panel */}
           <div id="get" className="op-purchase-grid">
             <section className="op-feature-panel">
               <p className="ba-launch-eyebrow">Built for real hybrid environments</p>
@@ -190,7 +187,7 @@ export default function OffboardPilotPage() {
 
             <aside className="op-purchase-card">
               <div className="op-purchase-card-top">
-                <span>SCRIPT PACK · v1.0</span><strong>$39</strong>
+                <span>OPEN SOURCE — MIT LICENSE</span><strong>Free</strong>
               </div>
               <h3>OffboardPilot</h3>
               <p>Full, commented PowerShell source. No compiled executables, no obfuscation. Three scripts included.</p>
@@ -201,16 +198,16 @@ export default function OffboardPilotPage() {
               </ul>
               <a
                 className="op-card-buy"
-                href={gumroadUrl}
+                href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-product="OffboardPilot"
                 data-version="v1.0"
               >
-                Get OffboardPilot — $39 <span>→</span>
+                View on GitHub <span></span>
               </a>
-              <a className="op-card-github" href={githubUrl} target="_blank" rel="noopener noreferrer">
-                View source &amp; documentation on GitHub
+              <a className="op-card-github" href={`${githubUrl}/issues`} target="_blank" rel="noopener noreferrer">
+                Browse open issues &amp; contribute
               </a>
             </aside>
           </div>
