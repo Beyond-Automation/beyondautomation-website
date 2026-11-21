@@ -1,10 +1,22 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type SubmissionState = "idle" | "submitting" | "success" | "error";
 
-export default function LaunchNewsletter() {
+type LaunchNewsletterProps = {
+  /** Hidden `source` field recorded with the Netlify form submission. */
+  source?: string;
+  heading?: string;
+  description?: string;
+};
+
+export default function LaunchNewsletter({
+  source = "website-dispatch",
+  heading = "Get new engineering work as it ships.",
+  description = "BA Dispatch shares new open-source projects, engineering articles, lab demonstrations, and community updates from Beyond Automation. Practical infrastructure engineering, written by engineers.",
+}: LaunchNewsletterProps = {}) {
   const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -34,6 +46,7 @@ export default function LaunchNewsletter() {
 
       form.reset();
       setSubmissionState("success");
+      trackEvent("newsletter_signup", { source });
     } catch {
       setSubmissionState("error");
     }
@@ -45,11 +58,8 @@ export default function LaunchNewsletter() {
         <div className="ba-newsletter-card">
           <div>
             <p>Beyond Automation Dispatch</p>
-            <h2>Follow the products while we build them.</h2>
-            <span>
-              Get practical engineering notes, product launch updates, PowerShell lessons,
-              and infrastructure guidance from the work behind AIHAT, PatchPilot, and NetFixLab.
-            </span>
+            <h2>{heading}</h2>
+            <span>{description}</span>
           </div>
 
           <form
@@ -59,7 +69,7 @@ export default function LaunchNewsletter() {
             onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value="newsletter" />
-            <input type="hidden" name="source" value="website-dispatch" />
+            <input type="hidden" name="source" value={source} />
 
             <label htmlFor="newsletter-email">Email address</label>
 
@@ -81,7 +91,7 @@ export default function LaunchNewsletter() {
 
             {submissionState === "success" && (
               <small role="status">
-                You are on the list. We will send product and engineering updates as they ship.
+                You are on the list. We will send new projects, articles, and demonstrations as they ship.
               </small>
             )}
 

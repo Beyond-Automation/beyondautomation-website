@@ -1,10 +1,8 @@
-import type { Metadata } from "next";
+import { buildArticleMetadata } from "@/components/journal/ArticleLayout";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-export const metadata: Metadata = {
-  title: "How AIHAT v1.0 went from PowerShell script to released product",
-};
+export const metadata = buildArticleMetadata("building-aihat-v1");
 
 export default function ArticlePage() {
   return (

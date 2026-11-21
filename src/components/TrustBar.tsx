@@ -1,7 +1,7 @@
 const items = [
-  { title: "Private Core", detail: "Proprietary implementation protected", icon: "code" },
+  { title: "Open Source", detail: "Released projects published on GitHub", icon: "code" },
   { title: "Infrastructure Engineering", detail: "Built from operational experience", icon: "spark" },
-  { title: "PowerShell First", detail: "Built for real IT work", icon: "terminal" },
+  { title: "Lab Validated", detail: "Tested in a hybrid infrastructure lab", icon: "terminal" },
   { title: "Security Focused", detail: "Safe operational patterns", icon: "shield" },
   { title: "Engineer Built", detail: "Created from production experience", icon: "engineer" },
 ];

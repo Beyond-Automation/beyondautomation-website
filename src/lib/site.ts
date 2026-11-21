@@ -1,0 +1,33 @@
+/**
+ * Shared site constants.
+ *
+ * External profile URLs are taken from published Beyond Automation sources
+ * (the Beyond-Automation GitHub organization profile). Do not invent handles.
+ */
+export const siteUrl = "https://beyondautomation.io";
+export const siteName = "Beyond Automation";
+export const siteTagline = "Engineering Smarter IT Operations";
+export const siteStatement = "Real Infrastructure. Real Engineering. Real Automation.";
+
+export const externalLinks = {
+  github: "https://github.com/Beyond-Automation",
+  youtube: "https://www.youtube.com/@BeyondAutomationIT",
+  linkedin: "https://www.linkedin.com/company/beyond-automation-io",
+} as const;
+
+export const founder = {
+  name: "Randall Lewis",
+  role: "Infrastructure Engineer & Founder",
+} as const;
+
+export const publisherSchema = {
+  "@type": "Organization",
+  name: siteName,
+  url: siteUrl,
+  logo: { "@type": "ImageObject", url: `${siteUrl}/icon.svg` },
+} as const;
+
+/** Absolute URL for a site-relative path. */
+export function absoluteUrl(path: string) {
+  return `${siteUrl}${path === "/" ? "" : path}`;
+}

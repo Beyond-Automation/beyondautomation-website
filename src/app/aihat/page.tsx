@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { DownloadButton } from "@/components/DownloadButton";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/aihat" },
   title: "AIHAT v1.2.0 | Free Windows Infrastructure Health Tool",
   description:
     "Download the free, signed AIHAT v1.2.0 Windows application from Beyond Automation.",

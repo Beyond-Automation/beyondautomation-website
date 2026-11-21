@@ -1,21 +1,21 @@
 const products = [
   {
     name: "AIHAT",
-    status: "Released",
-    description: "Infrastructure Health Audit Toolkit for Windows operations. See the audit workflow, reporting experience, and operational findings in action.",
+    status: "Free Download",
+    description: "Infrastructure Health Audit Toolkit for Windows operations. A free, signed Windows tool for read-only health assessment and reporting.",
     href: "/aihat",
     cta: "Explore AIHAT",
   },
   {
     name: "OffboardPilot",
-    status: "Available",
-    description: "Hybrid AD + M365 offboarding automation in a single guided PowerShell script — six steps, a reconciliation report, and a full session transcript.",
+    status: "Open Source",
+    description: "Hybrid AD + M365 offboarding automation in a single guided PowerShell script — six steps, a reconciliation report, and a full session transcript. MIT licensed.",
     href: "/products/offboardpilot",
-    cta: "Get OffboardPilot",
+    cta: "Explore OffboardPilot",
   },
   {
     name: "PatchPilot",
-    status: "Release Candidate",
+    status: "In Development",
     description: "Windows patch-health assessment built to turn patch state into clear evidence, coverage, and remediation decisions.",
     href: "/journal",
     cta: "Follow the build",
@@ -38,16 +38,16 @@ const products = [
 
 export default function ProductRoadmap() {
   return (
-    <section id="products" className="ba-growth-section">
+    <section id="products" className="ba-growth-section" aria-label="Beyond Automation projects">
       <div className="ba-container">
         <div className="ba-growth-header">
           <div>
-            <p>Product portfolio</p>
+            <p>Projects</p>
             <h2>Choose the problem. See the engineering.</h2>
           </div>
           <p>
-            Public product experiences demonstrate the value. Proprietary source code,
-            architecture, and internal release tooling stay private.
+            Released open-source projects, free tools, and work in development. Each project
+            states its own availability and license.
           </p>
         </div>
 

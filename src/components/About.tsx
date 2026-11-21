@@ -25,13 +25,17 @@ export default function About() {
           <p className="ba-mission-eyebrow">About Beyond Automation</p>
 
           <h2 id="about-heading">
-            Engineering practical software for modern IT operations.
+            Infrastructure engineering, built in the open.
           </h2>
 
           <p>
-            Beyond Automation was founded by Randall Lewis to help IT
-            professionals eliminate repetitive work without sacrificing
-            visibility, security, or control.
+            Beyond Automation was founded by Randall Lewis, an infrastructure
+            engineer with more than 20 years of enterprise IT experience, to help
+            IT professionals eliminate repetitive work without sacrificing
+            visibility, security, or control. Our projects are developed and
+            validated in an independent hybrid infrastructure lab, and released
+            projects are published on GitHub for engineers to inspect, adapt,
+            and improve.
           </p>
         </div>
 

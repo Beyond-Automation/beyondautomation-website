@@ -4,8 +4,9 @@ import Navbar from "@/components/Navbar";
 import ProductRoadmap from "@/components/ProductRoadmap";
 
 export const metadata: Metadata = {
-  title: "Products",
-  description: "Explore Beyond Automation products for Windows infrastructure health, patch readiness, and network troubleshooting.",
+  alternates: { canonical: "/products" },
+  title: "Projects",
+  description: "Open-source infrastructure automation, free Windows tools, and projects in development from Beyond Automation, including OffboardPilot and AIHAT.",
 };
 
 export default function ProductsPage() {
@@ -14,12 +15,12 @@ export default function ProductsPage() {
       <Navbar />
       <section className="ba-index-page">
         <div className="ba-container">
-          <p className="ba-launch-eyebrow">Beyond Automation products</p>
-          <h1>Engineering software for real IT operations.</h1>
+          <p className="ba-launch-eyebrow">Beyond Automation projects</p>
+          <h1>Engineering solutions for real IT operations.</h1>
           <p className="ba-product-lead">
-            Start with the product that solves the problem in front of you. Explore released
-            engineering, see what is approaching launch, and follow the Beyond Automation
-            portfolio as it grows.
+            Start with the project that solves the problem in front of you. Released open-source
+            projects are on GitHub for you to inspect, adapt, and improve. Free tools and work in
+            development are labeled with their current status.
           </p>
         </div>
       </section>

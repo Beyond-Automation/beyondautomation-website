@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/resources" },
   title: "Resources",
   description: "Product demos, engineering notes, and practical resources for infrastructure health, patch readiness, and network troubleshooting.",
 };

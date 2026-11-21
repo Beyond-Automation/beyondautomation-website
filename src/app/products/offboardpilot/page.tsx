@@ -1,19 +1,71 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import OutboundLink from "@/components/analytics/OutboundLink";
+import TrackView from "@/components/analytics/TrackView";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
+import { articlePath, getArticle } from "@/content/journal";
+import { absoluteUrl, publisherSchema } from "@/lib/site";
+
+const pageTitle = "OffboardPilot | Open-Source Hybrid AD + M365 Offboarding Automation";
+const pageDescription =
+  "OffboardPilot is a free, open-source (MIT) PowerShell script that automates hybrid Active Directory and Microsoft 365 employee offboarding in six steps with a reconciliation report and full transcript.";
+
+const demoArticle = getArticle("automate-employee-offboarding");
+const demoArticleHref = articlePath(demoArticle.slug);
 
 export const metadata: Metadata = {
-  title: "OffboardPilot | Hybrid AD + M365 Offboarding Automation (PowerShell)",
-  description:
-    "One PowerShell script. Six steps. Full audit trail. Automates the complete hybrid AD + M365 employee offboarding workflow - no hardcoded values, works in any environment.",
+  title: { absolute: pageTitle },
+  description: pageDescription,
+  alternates: { canonical: "/products/offboardpilot" },
+  openGraph: {
+    type: "website",
+    url: "/products/offboardpilot",
+    title: pageTitle,
+    description: pageDescription,
+    images: demoArticle.image ? [{ url: demoArticle.image.url, alt: demoArticle.image.alt, width: demoArticle.image.width, height: demoArticle.image.height }] : undefined,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: demoArticle.image ? [demoArticle.image.url] : undefined,
+  },
 };
 
 const githubUrl = "https://github.com/Beyond-Automation/OffboardPilot";
+
+const docLinks = [
+  { label: "README and documentation", detail: "Prerequisites, supported workflows, and how to verify a run", href: githubUrl + "#readme" },
+  { label: "Lab guide", detail: "Test both paths with fictional users and a test domain", href: githubUrl + "#lab-guide" },
+  { label: "Contribution guide", detail: "How to report results, file issues, and submit pull requests", href: githubUrl + "/blob/main/CONTRIBUTING.md" },
+  { label: "Open issues", detail: "Lab verification tasks and known work", href: githubUrl + "/issues" },
+  { label: "MIT License", detail: "The license that governs use of the source", href: githubUrl + "/blob/main/LICENSE" },
+];
+
+const sourceCodeSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  name: "OffboardPilot",
+  description: pageDescription,
+  url: absoluteUrl("/products/offboardpilot"),
+  codeRepository: githubUrl,
+  programmingLanguage: "PowerShell",
+  runtimePlatform: "Windows PowerShell 5.1",
+  license: "https://opensource.org/licenses/MIT",
+  version: "1.0",
+  author: publisherSchema,
+};
 
 export default function OffboardPilotPage() {
   return (
     <main id="main-content" className="min-h-screen bg-[#050816] text-white">
       <Navbar />
+      <TrackView event="product_view" params={{ product: "OffboardPilot" }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(sourceCodeSchema).replace(/</g, "\\u003c") }}
+      />
 
       {/* Hero */}
       <section className="op-hero">
@@ -26,7 +78,7 @@ export default function OffboardPilotPage() {
               <span>PowerShell 5.1 / 7</span>
               <span>Hybrid AD + M365</span>
               <span>v1.0</span>
-              <span>Open Source</span>
+              <span>Open Source · MIT</span>
             </div>
 
             <p className="ba-launch-eyebrow">Beyond Automation — open source</p>
@@ -39,10 +91,17 @@ export default function OffboardPilotPage() {
             </p>
 
             <div className="op-actions">
-              <a href={githubUrl} className="ba-button ba-button-primary op-buy-btn" target="_blank" rel="noopener noreferrer">
-                Get OffboardPilot on GitHub <span></span>
+              <OutboundLink href={githubUrl} destination="github" placement="product_hero" className="ba-button ba-button-primary op-buy-btn">
+                Get OffboardPilot on GitHub <span aria-hidden="true" className="ml-2">↗</span>
+              </OutboundLink>
+              <a href="#demo" className="ba-button ba-button-secondary">
+                Watch the demonstration
               </a>
             </div>
+
+            <p className="op-status">
+              <strong>Status:</strong> Released · v1.0 · Distributed as source from the GitHub repository under the MIT License.
+            </p>
 
             <div className="op-trust">
               <span>Full commented source — no obfuscation</span>
@@ -105,14 +164,13 @@ export default function OffboardPilotPage() {
           <div className="op-problem">
             <div>
               <p className="ba-launch-eyebrow">The silent failure</p>
-              <h2>Most offboarding scripts get the EXO groups wrong.</h2>
+              <h2>Offboarding scripts can get the EXO groups wrong.</h2>
               <p>
-                When you remove a user&rsquo;s M365 license, Exchange Online quietly reverts
+                When you remove a user&rsquo;s M365 license, Exchange Online may revert
                 their primary email address back to{" "}
-                <code>user@tenant.onmicrosoft.com</code>. Any script that filters
-                distribution group memberships by email address &mdash; and most do &mdash;
-                runs after the license removal, hits the wrong address, finds nothing,
-                and reports success.
+                <code>user@tenant.onmicrosoft.com</code>. A script that filters
+                distribution group memberships by email address after the license
+                removal can hit the wrong address, find nothing, and report success.
               </p>
               <p className="op-problem-callout">
                 The user is still in every cloud DL they were ever added to.
@@ -122,8 +180,30 @@ export default function OffboardPilotPage() {
                 <em>before</em> any license changes, then uses that DN for every group
                 query. DN is stable regardless of licensing state.
               </p>
+              <p>
+                <a className="ba-text-link" href={`${demoArticleHref}#exchange-online-identity`}>
+                  Read the full explanation in the Engineering Journal →
+                </a>
+              </p>
             </div>
           </div>
+
+          {/* Demonstration */}
+          <section id="demo" className="op-demo scroll-mt-28" aria-labelledby="op-demo-heading">
+            <div className="op-section-heading">
+              <p className="ba-launch-eyebrow">Engineering demonstration</p>
+              <h2 id="op-demo-heading">See a full offboarding run in a hybrid lab.</h2>
+            </div>
+            {demoArticle.video && (
+              <YouTubeEmbed videoId={demoArticle.video.youtubeId} title={demoArticle.video.title} placement="product_demo" />
+            )}
+            <p className="op-demo-article">
+              Want the background first?{" "}
+              <a className="ba-text-link" href={demoArticleHref}>
+                How to Automate Employee Offboarding Across Active Directory and Microsoft 365 →
+              </a>
+            </p>
+          </section>
 
           {/* Steps grid */}
           <div className="op-section-heading">
@@ -196,21 +276,42 @@ export default function OffboardPilotPage() {
                 <li><code>Get-EXOGroupMembership.ps1</code> — audit utility</li>
                 <li><code>Reset-TestAccount.ps1</code> — lab reset tool</li>
               </ul>
-              <a
+              <OutboundLink
                 className="op-card-buy"
                 href={githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                destination="github"
+                placement="product_card"
                 data-product="OffboardPilot"
                 data-version="v1.0"
               >
-                View on GitHub <span></span>
-              </a>
-              <a className="op-card-github" href={`${githubUrl}/issues`} target="_blank" rel="noopener noreferrer">
+                View on GitHub <span aria-hidden="true">↗</span>
+              </OutboundLink>
+              <OutboundLink className="op-card-github" href={`${githubUrl}/issues`} destination="github" placement="product_card_issues">
                 Browse open issues &amp; contribute
-              </a>
+              </OutboundLink>
             </aside>
           </div>
+
+          {/* Documentation + contributing */}
+          <section className="op-docs" aria-labelledby="op-docs-heading">
+            <div className="op-section-heading">
+              <p className="ba-launch-eyebrow">Documentation &amp; contributing</p>
+              <h2 id="op-docs-heading">Install it, test it in a lab, and help improve it.</h2>
+            </div>
+            <p className="op-docs-lead">
+              Clone or download the repository, review the prerequisites in the README, and run the lab guide
+              before using OffboardPilot in production. The most valuable contribution is running a lab test path
+              and reporting what you observed, especially if it differs from the documentation.
+            </p>
+            <div className="op-docs-grid">
+              {docLinks.map((link) => (
+                <OutboundLink key={link.label} href={link.href} destination="github" placement="product_docs" className="op-docs-link">
+                  <strong>{link.label} ↗</strong>
+                  <span>{link.detail}</span>
+                </OutboundLink>
+              ))}
+            </div>
+          </section>
         </div>
       </section>
 
