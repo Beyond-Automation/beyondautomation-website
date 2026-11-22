@@ -82,7 +82,9 @@ export const journalArticles: JournalArticle[] = [
       title: "Automate Employee Offboarding Across Active Directory & Microsoft 365 | OffboardPilot",
       description:
         "A narrated lab demonstration of OffboardPilot running a complete hybrid offboarding workflow across Active Directory, Microsoft Entra ID, Exchange Online, and Microsoft 365, ending with the reconciliation report.",
-      // uploadDate and duration intentionally unset until confirmed in YouTube Studio.
+      // Confirmed by the channel owner on 2026-11-21 (YouTube Studio).
+      uploadDate: "2026-11-21",
+      duration: "PT5M7S",
     },
     relatedProject: {
       name: "OffboardPilot",
