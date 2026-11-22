@@ -48,7 +48,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
+          <nav className="mx-8 hidden items-center gap-7 whitespace-nowrap xl:flex" aria-label="Primary navigation">
             {navigation.map((item) => (
               <Link key={item.label} href={item.href} className="nav-link">{item.label}</Link>
             ))}
@@ -66,7 +66,7 @@ export default function Navbar() {
 
             <button
               type="button"
-              className="ba-mobile-menu-button lg:hidden"
+              className="ba-mobile-menu-button xl:hidden"
               aria-expanded={open}
               aria-controls="mobile-navigation"
               aria-label={open ? "Close navigation" : "Open navigation"}
@@ -78,7 +78,7 @@ export default function Navbar() {
         </div>
 
         {open && (
-          <nav id="mobile-navigation" className="ba-mobile-navigation lg:hidden" aria-label="Mobile navigation">
+          <nav id="mobile-navigation" className="ba-mobile-navigation xl:hidden" aria-label="Mobile navigation">
             {navigation.map((item) => (
               <Link key={item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}</Link>
             ))}
