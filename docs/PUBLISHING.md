@@ -51,6 +51,12 @@ Append UTM parameters to the final article URL:
 ## Analytics events
 
 `src/lib/analytics.ts` emits `article_view`, `product_view`, `video_play`,
-`outbound_click`, and `newsletter_signup` to `window.dataLayer` (when a tag
-manager is installed) and as `ba:<event>` browser events. No analytics vendor
-is loaded by the site today.
+`outbound_click`, and `newsletter_signup` to GA4 via `gtag` and as
+`ba:<event>` browser events. `DownloadButton` also sends `product_download`.
+
+GA4 (gtag.js) is loaded in production builds by
+`src/components/analytics/GoogleAnalytics.tsx`. The measurement ID lives in
+`src/lib/site.ts` and can be overridden at build time with
+`NEXT_PUBLIC_GA_MEASUREMENT_ID` (set it to an empty string to disable).
+The CSP in `public/_headers` allows `www.googletagmanager.com` scripts and
+Google Analytics image beacons; `connect-src` already allows `https:`.

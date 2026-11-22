@@ -31,3 +31,15 @@ export const publisherSchema = {
 export function absoluteUrl(path: string) {
   return `${siteUrl}${path === "/" ? "" : path}`;
 }
+
+/**
+ * GA4 measurement ID (web stream "Beyond Automation Web").
+ * Public by design: it ships in page source. NEXT_PUBLIC_GA_MEASUREMENT_ID
+ * overrides it at build time (e.g. a staging property); an empty override
+ * disables analytics.
+ */
+const gaMeasurementIdRaw =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-74JCHHLJ1Q";
+export const gaMeasurementId = /^G-[A-Z0-9]+$/.test(gaMeasurementIdRaw)
+  ? gaMeasurementIdRaw
+  : "";
