@@ -11,7 +11,6 @@ import {
   getRelatedArticles,
   youtubeEmbedUrl,
   youtubeThumbnail,
-  youtubeWatchUrl,
   type JournalArticle,
 } from "@/content/journal";
 import { absoluteUrl, externalLinks, publisherSchema, siteName } from "@/lib/site";
@@ -63,11 +62,12 @@ function buildStructuredData(article: JournalArticle) {
           "@type": "VideoObject",
           name: video.title,
           description: video.description,
-          thumbnailUrl: [youtubeThumbnail(video.youtubeId, "maxresdefault"), youtubeThumbnail(video.youtubeId, "hqdefault")],
+          // hqdefault always exists for a YouTube video; maxresdefault is not guaranteed.
+          thumbnailUrl: [youtubeThumbnail(video.youtubeId, "hqdefault")],
           uploadDate: video.uploadDate,
           duration: video.duration,
           embedUrl: youtubeEmbedUrl(video.youtubeId),
-          contentUrl: youtubeWatchUrl(video.youtubeId),
+          // contentUrl is reserved for a media file; the YouTube watch page is not one.
           publisher: publisherSchema,
         }
       : undefined;
