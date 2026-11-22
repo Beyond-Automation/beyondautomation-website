@@ -3562,6 +3562,15 @@ a { text-decoration: none; }
 .ba-mobile-navigation a:focus-visible { background:rgba(37,99,235,.14); color:#fff; }
 .ba-mobile-navigation a + a { border-top:1px solid rgba(148,163,184,.08); }
 .site-header .ba-button { width:auto; white-space:nowrap; }
-@media (max-width: 639px) {
-  .site-header .ba-button { display:none; }
+/* Header CTA: shown on tablets (menu collapsed) and wide desktops; hidden on
+   phones and from 1024-1279px, where the full nav needs the room and its
+   "Projects" link goes to the same page. */
+@media (max-width: 639px), (min-width: 1024px) and (max-width: 1279px) {
+  .site-header .ba-header-cta { display:none; }
+}
+/* These unlayered rules beat Tailwind's lg:hidden, so hide them explicitly
+   once the full desktop nav is shown. */
+@media (min-width: 1024px) {
+  .ba-mobile-menu-button,
+  .ba-mobile-navigation { display:none; }
 }
