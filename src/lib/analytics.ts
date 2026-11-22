@@ -1,11 +1,12 @@
 /**
  * First-party analytics events.
  *
- * Follows the pattern already used by DownloadButton: push to window.dataLayer
- * when a tag manager / GA4 is present, and always dispatch a namespaced browser
- * event (`ba:<event>`) that any future analytics stack can listen for.
+ * Sends the event to GA4 via `window.gtag` (loaded by
+ * components/analytics/GoogleAnalytics in production). If gtag is absent but a
+ * tag manager dataLayer exists, pushes a GTM-style object instead. Always
+ * dispatches a namespaced browser event (`ba:<event>`) as well.
  *
- * No analytics vendor is loaded by this module. Never pass personal data,
+ * This module does not load any vendor script itself. Never pass personal data,
  * email addresses, or administrative identifiers as parameters.
  *
  * Event names (snake_case, GA4-compatible):
@@ -24,13 +25,26 @@ export type AnalyticsEvent =
 
 export type AnalyticsParams = Record<string, string | number | boolean>;
 
+type AnalyticsWindow = Window & {
+  gtag?: (command: "event", name: string, params?: AnalyticsParams) => void;
+  dataLayer?: object[];
+};
+
+/** Send an event to GA4 (gtag) or, failing that, a tag manager dataLayer. */
+export function sendToAnalytics(event: string, params: AnalyticsParams = {}) {
+  if (typeof window === "undefined") return;
+  const w = window as AnalyticsWindow;
+
+  if (typeof w.gtag === "function") {
+    w.gtag("event", event, params);
+  } else if (Array.isArray(w.dataLayer)) {
+    w.dataLayer.push({ event, ...params });
+  }
+}
+
 export function trackEvent(event: AnalyticsEvent, params: AnalyticsParams = {}) {
   if (typeof window === "undefined") return;
 
-  const dataLayer = (window as unknown as { dataLayer?: object[] }).dataLayer;
-  if (Array.isArray(dataLayer)) {
-    dataLayer.push({ event, ...params });
-  }
-
+  sendToAnalytics(event, params);
   window.dispatchEvent(new CustomEvent(`ba:${event}`, { detail: params }));
 }

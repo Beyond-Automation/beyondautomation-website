@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { externalLinks } from "@/lib/site";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://beyondautomation.io"),
@@ -78,6 +79,7 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

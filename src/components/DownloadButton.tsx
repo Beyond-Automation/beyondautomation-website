@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
+import { sendToAnalytics } from "@/lib/analytics";
 
 type DownloadButtonProps = {
   downloadUrl: string;
@@ -10,26 +11,21 @@ type DownloadButtonProps = {
 };
 
 /**
- * DownloadButton — tracks AIHAT download clicks via dataLayer and
+ * DownloadButton — tracks AIHAT download clicks via GA4 (gtag) and
  * a first-party browser event before navigating to the installer.
  *
  * Events emitted:
- *   dataLayer: { event: "product_download", product, version, file_type }
+ *   GA4: product_download { product, version, file_type }
  *   window: CustomEvent("ba:product-download", { detail: { product, version } })
  */
 export function DownloadButton({ downloadUrl, checksumUrl, version, product }: DownloadButtonProps) {
   const handleDownload = useCallback(() => {
-    // Push to dataLayer for GA4 / GTM
     if (typeof window !== "undefined") {
-      const dl = (window as unknown as { dataLayer?: object[] }).dataLayer;
-      if (Array.isArray(dl)) {
-        dl.push({
-          event: "product_download",
-          product,
-          version,
-          file_type: "installer",
-        });
-      }
+      sendToAnalytics("product_download", {
+        product,
+        version,
+        file_type: "installer",
+      });
 
       // First-party browser event — readable by any future analytics stack
       window.dispatchEvent(
