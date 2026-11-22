@@ -3,7 +3,8 @@ import { Metadata } from 'next';
 import { NetworkGearCard } from '@/components/NetworkGearCard';
 
 export const metadata: Metadata = {
-  title: 'Network Monitoring Gear Recommendations | Beyond Automation',
+  alternates: { canonical: "/tools/network-monitoring" },
+  title: 'Network Monitoring Gear Recommendations',
   description: 'Senior IT engineer picks for network monitoring hardware: managed switches, PoE switches, cable testers, patch panels, and SFP+ cables. Gear we actually rack.',
   openGraph: {
     title: 'Network Monitoring Gear Recommendations',

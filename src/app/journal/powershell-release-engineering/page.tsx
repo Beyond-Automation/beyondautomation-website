@@ -1,10 +1,8 @@
-import type { Metadata } from "next";
+import { buildArticleMetadata } from "@/components/journal/ArticleLayout";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-export const metadata: Metadata = {
-  title: "Why PowerShell projects need release engineering",
-};
+export const metadata = buildArticleMetadata("powershell-release-engineering");
 
 export default function ArticlePage() {
   return (

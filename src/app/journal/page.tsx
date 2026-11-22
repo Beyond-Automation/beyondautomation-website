@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import LaunchNewsletter from "@/components/LaunchNewsletter";
 import Navbar from "@/components/Navbar";
+import { articlePath, journalArticles } from "@/content/journal";
+
+const description =
+  "Engineering articles and lab demonstrations on infrastructure automation, Active Directory, Microsoft 365, PowerShell, and release engineering from Beyond Automation.";
 
 export const metadata: Metadata = {
   title: "Engineering Journal",
-  description: "Practical notes on PowerShell, infrastructure, product engineering, release discipline, and operational problem solving.",
+  description,
+  alternates: { canonical: "/journal" },
+  openGraph: { type: "website", url: "/journal", title: "Engineering Journal | Beyond Automation", description },
 };
-
-const articles = [
-  ["building-aihat-v1", "How AIHAT v1.0 went from PowerShell script to released product", "Product Engineering"],
-  ["powershell-release-engineering", "Why PowerShell projects need release engineering", "PowerShell"],
-  ["build-once-publish-everywhere", "Build once. Publish everywhere.", "Beyond Automation"],
-];
 
 export default function JournalPage() {
   return (
@@ -20,23 +21,25 @@ export default function JournalPage() {
       <section className="ba-index-page">
         <div className="ba-container">
           <p className="ba-launch-eyebrow">Engineering Journal</p>
-          <h1>What we build, what we learn, and the evidence behind it.</h1>
+          <h1>What we build, what we learn, and how it works.</h1>
           <p className="ba-product-lead">
-            Practical engineering notes from Beyond Automation. We share outcomes, lessons,
-            and operational thinking while keeping proprietary source code and internal implementation private.
+            Technical articles and lab demonstrations from Beyond Automation. Each one starts with a real
+            operational problem and explains the engineering behind the solution.
           </p>
           <div className="ba-journal-grid">
-            {articles.map(([slug, title, category]) => (
-              <article key={slug} className="ba-journal-card">
-                <span>{category}</span>
-                <h2>{title}</h2>
-                <p>Practical engineering notes from the Beyond Automation product journey.</p>
-                <a href={`/journal/${slug}`}>Read article →</a>
+            {journalArticles.map((article) => (
+              <article key={article.slug} className="ba-journal-card">
+                <span>{article.category}</span>
+                <h2>{article.title}</h2>
+                <p>{article.excerpt}</p>
+                {article.video && <small className="ba-journal-card-flag">Includes video demonstration</small>}
+                <a href={articlePath(article.slug)}>Read article →</a>
               </article>
             ))}
           </div>
         </div>
       </section>
+      <LaunchNewsletter source="journal-index" />
       <Footer />
     </main>
   );

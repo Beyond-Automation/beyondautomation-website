@@ -1,10 +1,8 @@
-import type { Metadata } from "next";
+import { buildArticleMetadata } from "@/components/journal/ArticleLayout";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-export const metadata: Metadata = {
-  title: "Build once. Publish everywhere.",
-};
+export const metadata = buildArticleMetadata("build-once-publish-everywhere");
 
 export default function ArticlePage() {
   return (

@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+
+export const metadata: Metadata = {
+  title: "Terms of Use",
+  description: "Terms of use for the Beyond Automation website, products, and open-source projects.",
+  alternates: { canonical: "/terms" },
+};
 
 export default function TermsPage() {
   return (
@@ -11,6 +18,7 @@ export default function TermsPage() {
           <div className="ba-article-body">
             <p>Beyond Automation website content and products are provided subject to the terms, licenses, and notices that apply to each offering.</p>
             <p>Unless a specific notice states otherwise, Beyond Automation source code, product architecture, internal tooling, documentation, branding, and related intellectual property are proprietary.</p>
+            <p>Open-source projects published by Beyond Automation are licensed under the license included in each project&rsquo;s repository, which governs your use of that project&rsquo;s source code.</p>
             <p>Users are responsible for reviewing, testing, and approving tools before using them in production environments.</p>
             <p>Beyond Automation does not guarantee that every product, tool, or article is suitable for every organization, device, policy, or regulatory requirement.</p>
             <p>Third-party software, services, and links remain subject to their own licenses, terms, and policies.</p>

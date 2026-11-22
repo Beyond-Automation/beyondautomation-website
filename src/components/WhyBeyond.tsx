@@ -184,7 +184,7 @@ export default function WhyBeyond() {
                 "PowerShell Automation",
                 "Engineering-Driven Development",
                 "Security-Minded Design",
-                "Private Core / Public Proof",
+                "Open-Source Engineering",
               ].map((tag) => (
                 <span key={tag}>{tag}</span>
               ))}
