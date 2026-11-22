@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
-import About from "@/components/About";
+import FeaturedDemo from "@/components/FeaturedDemo";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import JournalPreview from "@/components/JournalPreview";
 import LaunchNewsletter from "@/components/LaunchNewsletter";
 import Navbar from "@/components/Navbar";
+import OpenSourceCommunity from "@/components/OpenSourceCommunity";
 import ProductRoadmap from "@/components/ProductRoadmap";
-import TrustBar from "@/components/TrustBar";
-import WhyBeyond from "@/components/WhyBeyond";
-import AIHATLaunch from "@/components/AIHATLaunch";
-import AIHATDemo from "@/components/AIHATDemo";
-import FeaturedDemo from "@/components/FeaturedDemo";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+/**
+ * Organization homepage. Section order is intentional:
+ * hero → latest engineering demonstration → projects (balanced portfolio) →
+ * journal → open-source community → BA Dispatch → footer.
+ * Product-specific marketing (AIHAT dashboard, audit simulation, licensing)
+ * lives on each product page, not here.
+ */
 export default function Home() {
   return (
     <main
@@ -26,23 +29,11 @@ export default function Home() {
       <Navbar />
       <Hero />
       <FeaturedDemo />
-      <TrustBar />
       <ProductRoadmap />
-      <AIHATLaunch />
-
-      <section
-        id="interactive-demo"
-        className="scroll-mt-24"
-        aria-label="AIHAT interactive demo"
-      >
-        <AIHATDemo />
-      </section>
-      <WhyBeyond />
       <JournalPreview />
+      <OpenSourceCommunity />
       <LaunchNewsletter />
-      <About />
       <Footer />
     </main>
   );
 }
-

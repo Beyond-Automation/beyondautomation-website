@@ -1,18 +1,72 @@
-const healthRows = [
-  { label: "CPU", value: "Healthy", detail: "18% load", width: "28%", tone: "text-emerald-300", spark: "0,18 12,15 24,17 36,10 48,14 60,8 72,13 84,7 96,11" },
-  { label: "Memory", value: "76%", detail: "6.1 / 8 GB", width: "76%", tone: "text-cyan-300", spark: "0,16 12,12 24,14 36,8 48,12 60,7 72,11 84,6 96,9" },
-  { label: "Disk", value: "Good", detail: "62% free", width: "42%", tone: "text-blue-300", spark: "0,17 12,13 24,15 36,9 48,14 60,10 72,15 84,8 96,12" },
-  { label: "Updates", value: "2 missing", detail: "Attention", width: "64%", tone: "text-amber-300", spark: "" },
-  { label: "Security", value: "Passed", detail: "9 checks", width: "100%", tone: "text-emerald-300", spark: "0,15 12,10 24,14 36,7 48,12 60,8 72,13 84,6 96,9" },
+import { projects } from "@/content/projects";
+
+/**
+ * Organization-focused homepage hero. The visual shows the whole Beyond
+ * Automation portfolio and the open engineering workflow, with every project
+ * given the same weight. Product-specific visuals (such as the AIHAT
+ * dashboard) live on their own product pages.
+ */
+
+const workflow = [
+  { step: "01", label: "Build", detail: "Hybrid infrastructure lab" },
+  { step: "02", label: "Document", detail: "Engineering Journal" },
+  { step: "03", label: "Demonstrate", detail: "YouTube lab demos" },
+  { step: "04", label: "Publish", detail: "GitHub, open to contributors" },
 ];
 
-const activity = [
-  ["10:41:02", "Collecting system inventory"],
-  ["10:41:14", "Verifying Windows Update health"],
-  ["10:41:21", "Checking reboot indicators"],
-  ["10:41:29", "Evaluating security posture"],
-  ["10:41:37", "Generating actionable findings"],
-];
+function OrganizationVisual() {
+  return (
+    <div className="hero-dashboard-wrap" aria-label="Beyond Automation engineering portfolio overview">
+      <div className="dashboard-glow" />
+      <div className="dashboard-orbit" />
+
+      <div className="ba-live-panel">
+        <div className="dashboard-inner">
+          <div className="dashboard-header">
+            <div>
+              <p className="dashboard-kicker">github.com/Beyond-Automation</p>
+              <div className="dashboard-title-row">
+                <h2>Engineering Portfolio</h2>
+                <span className="ba-badge ba-badge-green">
+                  <span className="live-dot" />
+                  Built in the open
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <ul className="org-project-grid" aria-label="Projects">
+            {projects.map((project) => (
+              <li key={project.name} className="org-project-tile">
+                <div className="org-project-top">
+                  <strong>{project.name}</strong>
+                  <span>{project.status}</span>
+                </div>
+                <p>{project.tagline}</p>
+                <small>{project.release}</small>
+              </li>
+            ))}
+          </ul>
+
+          <ol className="org-workflow" aria-label="How we engineer">
+            {workflow.map((item) => (
+              <li key={item.step}>
+                <span>{item.step}</span>
+                <strong>{item.label}</strong>
+                <small>{item.detail}</small>
+              </li>
+            ))}
+          </ol>
+
+          <div className="org-terminal" aria-hidden="true">
+            <p><b>$</b> git clone https://github.com/Beyond-Automation/OffboardPilot</p>
+            <p><span>[OPEN]</span> Inspect the code, open an issue, send a pull request</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
@@ -33,30 +87,28 @@ export default function Hero() {
         <div className="hero-copy">
           <span className="ba-badge ba-badge-blue hero-badge">
             <span className="ba-badge-dot" />
-            Engineering smarter IT operations
+            Open-source infrastructure engineering
           </span>
 
           <h1 className="hero-title">Engineering Smarter <span className="text-gradient">IT Operations.</span></h1>
 
           <p className="hero-description">Beyond Automation develops practical infrastructure software, open-source automation solutions, and technical resources for engineers who want to build better systems.</p>
 
-          <p className="hero-description hero-description-secondary">Explore real engineering solutions, learn from technical demonstrations, and contribute to the future of infrastructure automation.</p>
-
           <div className="hero-actions">
             <a href="/products" className="ba-button ba-button-primary">
               Explore Our Projects
               <span className="ml-2">→</span>
             </a>
-            <a href="#latest-demo" className="ba-button ba-button-secondary">
-              Watch Our Engineering Demonstrations
+            <a href="/journal" className="ba-button ba-button-secondary">
+              Engineering Journal
             </a>
           </div>
 
           <div className="hero-proof-grid">
             {[
-              ["Real Infrastructure", "Hybrid lab, real environments", ">_"],
               ["Open Source", "Inspect, adapt, contribute", "⌁"],
-              ["Security-minded", "Safe by design", "◇"],
+              ["Real Infrastructure", "Built and tested in a hybrid lab", ">_"],
+              ["Engineering Education", "Articles and video demos", "◇"],
             ].map(([title, detail, icon]) => (
               <div key={title} className="hero-proof-card">
                 <span className="proof-icon">{icon}</span>
@@ -69,99 +121,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-dashboard-wrap" aria-label="AIHAT dashboard preview">
-          <div className="dashboard-glow" />
-          <div className="dashboard-orbit" />
-
-          <div className="ba-live-panel">
-            <div className="dashboard-inner">
-              <div className="dashboard-header">
-                <div>
-                  <p className="dashboard-kicker">Infrastructure Health Audit Toolkit</p>
-                  <div className="dashboard-title-row">
-                    <h2>AIHAT v1.2.0</h2>
-                    <span className="ba-badge ba-badge-green">
-                      <span className="live-dot" />
-                      Audit running
-                    </span>
-                  </div>
-                </div>
-
-                <div className="dashboard-header-metrics">
-                  <div className="header-metric">
-                    <span className="header-metric-icon">◷</span>
-                    <div>
-                      <span className="header-metric-label">Time saved</span>
-                      <strong>42 min</strong>
-                    </div>
-                  </div>
-
-                  <div className="health-summary">
-                    <span>Overall Health</span>
-                    <strong>Healthy ♡</strong>
-                  </div>
-                </div>
-              </div>
-
-              <div className="dashboard-main">
-                <div className="health-column">
-                  {healthRows.map((row, index) => (
-                    <div key={row.label} className="health-row" style={{ animationDelay: `${index * 0.12}s` }}>
-                      <span className="metric-icon">
-                        {row.label === "CPU" ? "▦" : row.label === "Memory" ? "▤" : row.label === "Disk" ? "▣" : row.label === "Updates" ? "⟳" : "◇"}
-                      </span>
-                      <div className="health-content">
-                        <div className="health-topline">
-                          <div><p>{row.label}</p><span>{row.detail}</span></div>
-                          <div className="health-value-area">
-                            {row.spark && <svg viewBox="0 0 96 24" className="sparkline" aria-hidden="true"><polyline fill="none" stroke="currentColor" strokeWidth="1.5" points={row.spark} /></svg>}
-                            <strong className={row.tone}>{row.value}</strong>
-                          </div>
-                        </div>
-                        <div className="health-track"><div className="health-bar" style={{ width: row.width }} /></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="dashboard-side">
-                  <div className="dashboard-card">
-                    <div className="card-heading"><p>Audit activity</p><span>05 / 05</span></div>
-                    <div className="activity-list">
-                      {activity.map(([time, item], index) => (
-                        <div key={item} className="activity-line" style={{ animationDelay: `${index * 0.42}s` }}>
-                          <span className="activity-check">✓</span><span className="activity-copy">{item}</span><span className="activity-time">{time}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="dashboard-card recommendation-card">
-                    <div className="card-heading"><p>Operational Recommendations</p><span>2 findings</span></div>
-                    <ul>
-                      <li>Review two missing Windows updates before the next maintenance window.</li>
-                      <li>Consider enabling Microsoft Defender tamper protection.</li>
-                    </ul>
-                    <a href="/aihat">View recommendations →</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="dashboard-footer">
-                <div className="audit-log">
-                  <div className="log-heading"><span>&gt;_ Audit Log</span><span className="live-label">Live <i className="live-dot" /></span></div>
-                  <div className="log-line"><span>10:41:02</span><b>[INFO]</b><em>Starting infrastructure audit...</em></div>
-                  <div className="log-line"><span>10:41:08</span><b>[INFO]</b><em>Analyzing configuration...</em></div>
-                  <div className="log-line"><span>10:41:37</span><b className="success">[SUCCESS]</b><em>Audit complete</em></div>
-                </div>
-                <div className="report-status">
-                  <div><span>Generating report...</span><strong>100%</strong></div>
-                  <div className="report-track"><div className="report-progress" /></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <OrganizationVisual />
       </div>
     </section>
   );

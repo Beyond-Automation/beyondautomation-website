@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { DownloadButton } from "@/components/DownloadButton";
+import AIHATDashboard from "@/components/AIHATDashboard";
+import AIHATDemo from "@/components/AIHATDemo";
+import AIHATLaunch from "@/components/AIHATLaunch";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/aihat" },
@@ -32,7 +35,7 @@ export default function AIHATPage() {
               <span>v1.2.0</span>
             </div>
 
-            <p className="ba-launch-eyebrow">Beyond Automation flagship product</p>
+            <p className="ba-launch-eyebrow">Free Windows tool from Beyond Automation</p>
             <h1>Know the health of your Windows system.</h1>
             <p className="aihat-release-lead">
               AIHAT turns system health, Windows Update, security, and network checks
@@ -156,6 +159,27 @@ export default function AIHATPage() {
             <pre><code>{`Get-FileHash .\\AIHAT-v1.2.0-Setup.exe -Algorithm SHA256`}</code></pre>
           </section>
         </div>
+      </section>
+
+      <section className="aihat-dashboard-section" aria-labelledby="aihat-dashboard-heading">
+        <div className="ba-container aihat-dashboard-shell">
+          <div className="aihat-section-heading">
+            <p className="ba-launch-eyebrow">Inside an audit</p>
+            <h2 id="aihat-dashboard-heading">Health, activity, and recommendations in one view.</h2>
+            <p>An illustrative view of an AIHAT audit as it collects evidence and produces operational recommendations.</p>
+          </div>
+          <AIHATDashboard />
+        </div>
+      </section>
+
+      <AIHATLaunch />
+
+      <section
+        id="interactive-demo"
+        className="scroll-mt-24"
+        aria-label="AIHAT interactive demo"
+      >
+        <AIHATDemo />
       </section>
 
       <Footer />

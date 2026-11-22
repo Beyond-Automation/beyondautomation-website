@@ -9,10 +9,10 @@ const features = [
 
 export default function AIHATLaunch() {
   return (
-    <section id="aihat" className="ba-launch-section">
+    <section id="release" className="ba-launch-section">
       <div className="ba-container">
         <div className="ba-launch-heading">
-          <p className="ba-launch-eyebrow">Flagship Beyond Automation product</p>
+          <p className="ba-launch-eyebrow">AIHAT release details</p>
           <h2>AIHAT v1.2.0 is released.</h2>
           <p>
             The Infrastructure Health Audit Toolkit gives IT professionals a repeatable way
@@ -33,11 +33,11 @@ export default function AIHATLaunch() {
             <h3>One audit. Four health modules. One professional report.</h3>
 
             <div className="ba-launch-actions">
-              <a href="/aihat" className="ba-button ba-button-primary">
-                Explore AIHAT <span>→</span>
+              <a href="#install" className="ba-button ba-button-primary">
+                Download AIHAT <span>→</span>
               </a>
               <a href="/products" className="ba-button ba-button-secondary">
-                View products
+                View all projects
               </a>
             </div>
 
