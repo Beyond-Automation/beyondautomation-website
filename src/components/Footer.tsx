@@ -1,4 +1,6 @@
 import Link from "next/link";
+import OutboundLink from "@/components/analytics/OutboundLink";
+import { externalLinks, siteStatement } from "@/lib/site";
 
 type FooterItem = {
   title: string;
@@ -7,6 +9,7 @@ type FooterItem = {
 };
 
 const productLinks: FooterItem[] = [
+  { title: "OffboardPilot", detail: "Open-source hybrid offboarding automation", href: "/products/offboardpilot" },
   { title: "AIHAT", detail: "Infrastructure Health Audit Toolkit", href: "/aihat" },
   { title: "PatchPilot", detail: "Windows patch-health assessment", href: "/journal" },
   { title: "NetFixLab", detail: "Network troubleshooting and diagnostics", href: "/journal" },
@@ -14,8 +17,8 @@ const productLinks: FooterItem[] = [
 
 const resourceLinks: FooterItem[] = [
   { title: "Resources", detail: "Practical guides and references", href: "/resources" },
-  { title: "Journal", detail: "Product engineering notes and lessons", href: "/journal" },
-  { title: "Products", detail: "Current product portfolio", href: "/products" },
+  { title: "Engineering Journal", detail: "Articles and lab demonstrations", href: "/journal" },
+  { title: "Projects", detail: "Open-source projects and tools", href: "/products" },
 ];
 
 const companyLinks: FooterItem[] = [
@@ -64,26 +67,32 @@ export default function Footer() {
             </div>
 
             <p>
-              Engineering smarter IT operations through automation, PowerShell,
-              security, and modern infrastructure tooling.
+              Practical infrastructure software, open-source automation, and
+              technical education for engineers who want to build better systems.
             </p>
 
             <div className="ba-footer-socials">
-              <a href="https://www.linkedin.com/company/beyond-automation-io" target="_blank" rel="noreferrer">
+              <OutboundLink href={externalLinks.github} destination="github" placement="footer">
+                <span>GitHub</span>
+              </OutboundLink>
+              <OutboundLink href={externalLinks.youtube} destination="youtube" placement="footer">
+                <span>YouTube</span>
+              </OutboundLink>
+              <OutboundLink href={externalLinks.linkedin} destination="linkedin" placement="footer">
                 <span>LinkedIn</span>
-              </a>
+              </OutboundLink>
               <a href="mailto:contact@beyondautomation.io"><span>Contact</span></a>
             </div>
 
             <Link href="/products" className="ba-footer-cta">
-              <span>Explore Products</span><span className="ba-footer-cta-arrow">→</span>
+              <span>Explore Projects</span><span className="ba-footer-cta-arrow">→</span>
             </Link>
           </section>
 
           <section className="ba-footer-column">
-            <h2>Products</h2>
+            <h2>Projects</h2>
             <div className="ba-footer-links">{productLinks.map((item) => <FooterLink key={item.title} item={item} />)}</div>
-            <Link className="ba-footer-column-action" href="/products">View all products →</Link>
+            <Link className="ba-footer-column-action" href="/products">View all projects →</Link>
           </section>
 
           <section className="ba-footer-column">
@@ -100,7 +109,7 @@ export default function Footer() {
         </div>
 
         <div className="ba-footer-bottom">
-          © 2026 Beyond Automation&nbsp; • &nbsp;Public proof. Private engineering core.
+          © 2026 Beyond Automation&nbsp; • &nbsp;{siteStatement}
         </div>
       </div>
     </footer>

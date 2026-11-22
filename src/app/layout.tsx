@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { externalLinks } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://beyondautomation.io"),
@@ -8,12 +9,14 @@ export const metadata: Metadata = {
     template: "%s | Beyond Automation",
   },
   description:
-    "Engineering software for Windows infrastructure health, patch readiness, network troubleshooting, and practical IT automation.",
+    "Beyond Automation develops practical infrastructure software, open-source automation solutions, and technical resources for infrastructure engineers and IT professionals.",
   keywords: [
+    "infrastructure engineering",
+    "open-source IT automation",
     "IT automation",
     "PowerShell automation",
-    "infrastructure engineering",
     "IT operations automation",
+    "OffboardPilot",
     "AIHAT",
     "Windows health audit",
     "Windows patch health",
@@ -24,21 +27,21 @@ export const metadata: Metadata = {
   authors: [{ name: "Beyond Automation" }],
   creator: "Beyond Automation",
   publisher: "Beyond Automation",
-  alternates: { canonical: "/" },
+  // Canonical URLs are set per page. A root-level canonical would be inherited
+  // by every route and point all of them at the homepage.
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "/",
     siteName: "Beyond Automation",
     title: "Beyond Automation | Engineering Smarter IT Operations",
     description:
-      "Engineering software for infrastructure health, patch readiness, network troubleshooting, and practical IT automation.",
+      "Practical infrastructure software, open-source automation, and technical demonstrations for engineers who want to build better systems.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Beyond Automation | Engineering Smarter IT Operations",
     description:
-      "Engineering software for infrastructure health, patch readiness, network troubleshooting, and practical IT automation.",
+      "Practical infrastructure software, open-source automation, and technical demonstrations for engineers who want to build better systems.",
   },
   robots: { index: true, follow: true },
   manifest: "/manifest.webmanifest",
@@ -53,9 +56,11 @@ const organizationSchema = {
   name: "Beyond Automation",
   url: siteUrl,
   logo: `${siteUrl}/icon.svg`,
+  slogan: "Engineering Smarter IT Operations.",
   description:
-    "Engineering software for modern IT operations.",
-  sameAs: ["https://www.linkedin.com/company/beyond-automation-io"],
+    "Infrastructure engineering, open-source automation, and technical education for IT professionals.",
+  founder: { "@type": "Person", name: "Randall Lewis" },
+  sameAs: [externalLinks.linkedin, externalLinks.github, externalLinks.youtube],
 };
 
 export default function RootLayout({

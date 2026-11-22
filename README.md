@@ -1,15 +1,16 @@
 # Beyond Automation Website
 
-The public website for Beyond Automation — a product and engineering brand focused on practical IT operations, PowerShell automation, infrastructure health, patch readiness, and network troubleshooting.
+The public website for Beyond Automation — an infrastructure engineering, open-source software, and technical education organization. *Engineering Smarter IT Operations.*
 
-## Product portfolio
+## Projects
 
-- **AIHAT** — released Windows infrastructure health audit product
-- **PatchPilot** — release-candidate patch-health assessment product
-- **NetFixLab** — launching diagnosis-first network troubleshooting product
-- **Engineering Resources** — practical operational guidance and demonstrations
+- **OffboardPilot** — open-source (MIT) hybrid AD + Microsoft 365 offboarding automation
+- **AIHAT** — free, signed Windows infrastructure health audit tool (private source)
+- **PatchPilot** — Windows patch-health assessment (in development)
+- **NetFixLab** — diagnosis-first network troubleshooting
+- **Engineering Journal** — technical articles and lab demonstrations (see `docs/PUBLISHING.md`)
 
-The website follows a **public proof / private engineering core** model. Product value, demonstrations, release status, and selected engineering lessons are public while proprietary source code, architecture, and internal release tooling remain private.
+Each project's availability and license is verified against its repository before it is described on the site. Released open-source projects link to their GitHub repositories; projects with private source say so.
 
 ## Technology
 
@@ -42,7 +43,7 @@ Repository automation also validates the site through GitHub Actions and securit
 
 ## Engineering standard
 
-Changes should be intentional, validated, and aligned with the current Beyond Automation product strategy. Public-facing messaging must not expose private repository destinations, proprietary implementation details, or obsolete open-source positioning.
+Changes should be intentional, validated, and aligned with the current Beyond Automation product strategy. Public-facing messaging must not expose private repository destinations or proprietary implementation details, and must not describe a project as open source unless its repository is public and licensed.
 
 ## Repository status
 

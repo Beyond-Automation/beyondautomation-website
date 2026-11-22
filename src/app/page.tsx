@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -9,6 +10,11 @@ import TrustBar from "@/components/TrustBar";
 import WhyBeyond from "@/components/WhyBeyond";
 import AIHATLaunch from "@/components/AIHATLaunch";
 import AIHATDemo from "@/components/AIHATDemo";
+import FeaturedDemo from "@/components/FeaturedDemo";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
@@ -19,7 +25,9 @@ export default function Home() {
     >
       <Navbar />
       <Hero />
+      <FeaturedDemo />
       <TrustBar />
+      <ProductRoadmap />
       <AIHATLaunch />
 
       <section
@@ -30,7 +38,6 @@ export default function Home() {
         <AIHATDemo />
       </section>
       <WhyBeyond />
-      <ProductRoadmap />
       <JournalPreview />
       <LaunchNewsletter />
       <About />

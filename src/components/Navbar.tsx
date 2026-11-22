@@ -2,13 +2,19 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import OutboundLink from "@/components/analytics/OutboundLink";
+import { externalLinks } from "@/lib/site";
 
 const navigation = [
-  { label: "AIHAT", href: "/aihat" },
-  { label: "Products", href: "/products" },
-  { label: "Journal", href: "/journal" },
+  { label: "Projects", href: "/products" },
+  { label: "Engineering Journal", href: "/journal" },
   { label: "Resources", href: "/resources" },
   { label: "About", href: "/#about" },
+];
+
+const external = [
+  { label: "GitHub", href: externalLinks.github, destination: "github" as const },
+  { label: "YouTube", href: externalLinks.youtube, destination: "youtube" as const },
 ];
 
 function BrandMark() {
@@ -46,11 +52,16 @@ export default function Navbar() {
             {navigation.map((item) => (
               <Link key={item.label} href={item.href} className="nav-link">{item.label}</Link>
             ))}
+            {external.map((item) => (
+              <OutboundLink key={item.label} href={item.href} destination={item.destination} placement="header" className="nav-link">
+                {item.label}<span className="sr-only"> (opens in a new tab)</span> <span aria-hidden="true">↗</span>
+              </OutboundLink>
+            ))}
           </nav>
 
           <div className="flex items-center gap-3">
             <Link href="/products" className="ba-button ba-button-primary hidden sm:inline-flex">
-              Explore Products <span className="ml-2">→</span>
+              Explore Projects <span className="ml-2">→</span>
             </Link>
 
             <button
@@ -71,7 +82,11 @@ export default function Navbar() {
             {navigation.map((item) => (
               <Link key={item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}</Link>
             ))}
-            <Link href="/products" onClick={() => setOpen(false)}>Explore Products</Link>
+            {external.map((item) => (
+              <OutboundLink key={item.label} href={item.href} destination={item.destination} placement="mobile_nav" onClick={() => setOpen(false)}>
+                {item.label} <span aria-hidden="true">↗</span>
+              </OutboundLink>
+            ))}
           </nav>
         )}
       </div>

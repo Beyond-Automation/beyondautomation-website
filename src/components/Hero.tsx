@@ -38,20 +38,24 @@ export default function Hero() {
 
           <h1 className="hero-title">Engineering Smarter <span className="text-gradient">IT Operations.</span></h1>
 
-          <p className="hero-description">Beyond Automation builds engineering software that simplifies IT operations, strengthens infrastructure, and helps technology professionals solve real operational challenges with confidence.</p>
+          <p className="hero-description">Beyond Automation develops practical infrastructure software, open-source automation solutions, and technical resources for engineers who want to build better systems.</p>
+
+          <p className="hero-description hero-description-secondary">Explore real engineering solutions, learn from technical demonstrations, and contribute to the future of infrastructure automation.</p>
 
           <div className="hero-actions">
             <a href="/products" className="ba-button ba-button-primary">
-              <span className="mr-2">↗</span>
-              Explore Products
+              Explore Our Projects
               <span className="ml-2">→</span>
+            </a>
+            <a href="#latest-demo" className="ba-button ba-button-secondary">
+              Watch Our Engineering Demonstrations
             </a>
           </div>
 
           <div className="hero-proof-grid">
             {[
-              ["Native Windows", "Built for real IT environments", ">_"],
-              ["Infrastructure Engineering", "Operational Automation", "⌁"],
+              ["Real Infrastructure", "Hybrid lab, real environments", ">_"],
+              ["Open Source", "Inspect, adapt, contribute", "⌁"],
               ["Security-minded", "Safe by design", "◇"],
             ].map(([title, detail, icon]) => (
               <div key={title} className="hero-proof-card">
